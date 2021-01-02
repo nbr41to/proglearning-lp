@@ -9,6 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>progLab</title>
+        <meta name="description" content="「新しい好きよ。集まれ。」楽しくプログラミングを学べる成長サポートコミュニティ 'progLab' は人生を変えるためのメソッドを提供します。" />
       </Head>
       <Header />
       <Component {...pageProps} />
