@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           <meta charSet="utf-8" />
+          {/* Analytics */}
         </Head>
         <body>
           <Main />
