@@ -1,4 +1,4 @@
-# progLabのランディングページ
+# progLab のランディングページ
 
 ## policy
 
@@ -6,7 +6,7 @@
 
 誰でも気軽に編集できるように
 
-- yarnで統一
+- yarn で統一
 - styled-components
 - typescript
 - eslint

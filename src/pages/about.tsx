@@ -1,10 +1,11 @@
-import React from 'react'
-import { FadeInBlock } from "src/components/FadeInBlock"
-
-export default () => {
+import React from 'react';
+import AboutMDX from 'src/contents-mdx/about.mdx';
+const About = () => {
   return (
     <div>
-      <h1>プログラミング学習コミュニティ</h1>
+      <AboutMDX />
     </div>
-  )
-}
+  );
+};
+
+export default About;

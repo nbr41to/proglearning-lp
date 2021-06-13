@@ -1,18 +1,11 @@
-import Image from "next/image"
-import React from 'react'
-import { FadeInBlock } from "src/components/FadeInBlock"
-
-export default () => {
+import React from 'react';
+import HomeMDX from 'src/contents-mdx/home.mdx';
+const Home = () => {
   return (
     <div>
-      <FadeInBlock>
-        <Image src="/progLab.002.png" width={10000} height={5500} />
-      </FadeInBlock>
-      <FadeInBlock>
-        <h1>新しい好きよ、集まれ。</h1>
-      </FadeInBlock>
-
-
+      <HomeMDX />
     </div>
-  )
-}
+  );
+};
+
+export default Home;
