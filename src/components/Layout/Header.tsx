@@ -22,11 +22,9 @@ export const Header = () => {
           </Link> */}
         </nav>
       </HeaderStyled>
-      {process.browser && location.pathname === '/' && (
-        <StyledImage>
-          <img src="/progLab.002.png" />
-        </StyledImage>
-      )}
+      <div suppressHydrationWarning={true}>
+        {process.browser && location.pathname === '/' && <StyledImage src="./progLab.002.png" />}
+      </div>
     </>
   );
 };
@@ -56,9 +54,6 @@ const HeaderStyled = styled.header`
   }
 `;
 
-const StyledImage = styled.div`
+const StyledImage = styled.img`
   width: 100%;
-  img {
-    width: 100%;
-  }
 `;
