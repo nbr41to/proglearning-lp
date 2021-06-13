@@ -11,3 +11,9 @@
 - typescript
 - eslint
 - storybook
+
+## Issue
+
+- [ ] レスポンシブを簡単にかけるように
+- [ ] テーマカラーなど
+- [ ] MDX のスタイリング
