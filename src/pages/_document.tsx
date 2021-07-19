@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { existsGaId, GA_ID } from 'src/lib/gtag';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -33,7 +34,24 @@ export default class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           <meta charSet="utf-8" />
-          {/* Analytics */}
+
+          {/* Google Analytics */}
+          {existsGaId && (
+            <>
+              <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_ID}', {
+                    page_path: window.location.pathname,
+                  });`,
+                }}
+              />
+            </>
+          )}
         </Head>
         <body>
           <Main />
