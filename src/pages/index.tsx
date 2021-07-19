@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeMDX from 'src/contents-mdx/home.mdx';
-import * as dev2 from 'src/assets/lottie/develop02.json';
-import * as dev3 from 'src/assets/lottie/develop03.json';
+import * as develop01 from 'src/assets/lottie/develop01.json';
+import * as develop02 from 'src/assets/lottie/develop02.json';
 import * as puzzle from 'src/assets/lottie/team_puzzle.json';
 import { LottieCustom } from 'src/components/LottieCustom';
 import styled from 'styled-components';
@@ -22,7 +22,7 @@ const Home = () => {
           </ul>
         </div>
         <div className="lottie">
-          <LottieCustom src={dev2} />
+          <LottieCustom src={develop01} />
         </div>
       </section>
       <section className="reverse">
@@ -33,7 +33,7 @@ const Home = () => {
           </p>
         </div>
         <div className="lottie">
-          <LottieCustom src={dev3} />
+          <LottieCustom src={develop02} />
         </div>
       </section>
       <section>
