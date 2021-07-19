@@ -1,10 +1,34 @@
-import React from 'react'
-import { FadeInBlock } from "src/components/FadeInBlock"
-
-export default () => {
+import React from 'react';
+import AboutMDX from 'src/contents-mdx/about.mdx';
+import styled from 'styled-components';
+const About = () => {
   return (
-    <div>
-      <h1>プログラミング学習コミュニティ</h1>
-    </div>
-  )
-}
+    <StyledAbout>
+      <div className="about_markdown">
+        <AboutMDX />
+      </div>
+    </StyledAbout>
+  );
+};
+
+export default About;
+
+const StyledAbout = styled.div`
+  > .about_markdown {
+    width: 100%;
+    padding: 0 12px;
+    > h2 {
+      margin-top: 40px;
+      ${({ theme }) => theme.sp`
+        font-size: 24px;
+      `}
+    }
+    > p {
+      word-wrap: break-word;
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
+    }
+  }
+`;
