@@ -13,17 +13,24 @@ export const Footer: VFC = () => {
 };
 
 const FooterStyled = styled.footer`
-  font-size: 26px;
-  color: aquamarine;
-  margin-top: 24px;
+  width: 100%;
   padding: 12px 24px;
   border-top: 1px solid #ccc;
+
+  color: ${(props) => props.theme.colors.orange};
   text-align: center;
-  .copyright {
-    font-size: 14px;
-    a {
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+
+  /* position: relative;
+  left: 0;
+  bottom: 0; */
+
+  > .copyright {
+    font-size: 16px;
+    > a {
       font-family: 'Apple LiGothic', sans-serif;
-      font-size: 20px;
+      font-size: 24px;
       margin: 0 6px;
     }
   }
