@@ -39,6 +39,7 @@ export const Header = () => {
 };
 
 const HeaderStyled = styled.header`
+  width: 100%;
   font-family: 'Apple LiGothic', sans-serif;
   font-size: 26px;
   color: #fff;
@@ -56,21 +57,24 @@ const HeaderStyled = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     ${({ theme }) => theme.sp`
       width: 100%;
       background-color: #fff;
       color: ${({ theme }) => theme.colors.main};
-    `}
+      `}
     .image_container {
       margin-top: 8px;
       margin-left: 20px;
       width: 60px;
+      filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
       ${({ theme }) => theme.sp`
         width: 50px;
       `}
     }
     > h1 {
-      padding: 16px 24px;
+      padding: 16px 20px;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -85,10 +89,10 @@ const HeaderStyled = styled.header`
         border-left: none;
       `}
       &.current {
-        color: orange;
+        color: ${(props) => props.theme.colors.orange};
       }
       &:hover {
-        color: orange;
+        color: ${(props) => props.theme.colors.orange};
         transition: 0.6s;
       }
     }

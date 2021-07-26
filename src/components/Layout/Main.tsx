@@ -18,6 +18,6 @@ export const Main: VFC<MainProps> = ({ children }) => {
 };
 
 const StyledMain = styled.div`
+  width: 100%;
   padding: 12px 20px;
-  border-top: 1px solid aquamarine;
 `;

@@ -110,7 +110,10 @@ const StyledHome = styled.div`
 
   > .home_markdown {
     width: 100%;
-    padding: 0 32px;
+    padding: 0 48px;
+    ${({ theme }) => theme.sp`
+      padding: 0 16px;
+    `}
     > h2 {
       margin-top: 40px;
       &:before {
@@ -130,6 +133,9 @@ const StyledHome = styled.div`
         color: blue;
         text-decoration: underline;
       }
+    }
+    ul {
+      padding-left: 16px;
     }
   }
 `;

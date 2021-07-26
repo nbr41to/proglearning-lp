@@ -3,21 +3,32 @@ import styled from 'styled-components';
 import LineIcon from 'src/assets/contact_icon/LINE_Brand_icon.svg';
 import TwitterIcon from 'src/assets/contact_icon/Twitter_icon.svg';
 import YouTubeIcon from 'src/assets/contact_icon/YouTube_icon.svg';
+import GitHubIcon from 'src/assets/contact_icon/GitHub_icon.svg';
 
 const Contact = () => {
   const [openApplicate, setOpenApplicate] = useState(false);
   return (
     <StyledContact>
-      <h1>CONTACT</h1>
-      <a className="icon" href="https://lin.ee/JYDAgcH">
-        <LineIcon />
-      </a>
-      <a className="icon twitter" href="https://twitter.com/Knob_nbr41to">
-        <TwitterIcon />
-      </a>
-      <a className="icon youtube" href="https://www.youtube.com/channel/UCPcjWvYIfvqGPP4x30kEkMA">
-        <YouTubeIcon />
-      </a>
+      <h1>#CONTACT</h1>
+      <div className="sns_icon_container">
+        <a className="icon" href="https://lin.ee/JYDAgcH" target="_blank" rel="noopener noreferrer">
+          <LineIcon />
+        </a>
+        <a className="icon twitter" href="https://twitter.com/Knob_nbr41to" target="_blank" rel="noopener noreferrer">
+          <TwitterIcon />
+        </a>
+        <a
+          className="icon youtube"
+          href="https://www.youtube.com/channel/UCPcjWvYIfvqGPP4x30kEkMA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <YouTubeIcon />
+        </a>
+        <a className="icon github" href="https://github.com/prog-learning" target="_blank" rel="noopener noreferrer">
+          <GitHubIcon />
+        </a>
+      </div>
       <p>質問など気軽にお問い合わせください！</p>
       <div className="applicate_button" onClick={() => setOpenApplicate(true)}>
         お申し込みの方はコチラ
@@ -43,28 +54,39 @@ export default Contact;
 const StyledContact = styled.div`
   text-align: center;
   > h1 {
+    color: ${(props) => props.theme.colors.main};
     font-size: 32px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+    margin-bottom: 16px;
     ${(props) => props.theme.sp`
       font-size: 28px;
+      `}
+  }
+  .sns_icon_container {
+    margin: 0 auto;
+    ${(props) => props.theme.sp`
+      max-width: 200px;
     `}
-  }
-  > .icon {
-    display: inline-block;
-    > svg {
-      width: 100px;
+    > .icon {
+      display: inline-block;
+      > svg {
+        width: 100px;
+      }
     }
-  }
-  > .twitter {
-    > svg {
-      width: 100px;
-      padding: 12.5px;
-      fill: #1da1f2;
+    > .twitter {
+      > svg {
+        width: 100px;
+        padding: 12.5px;
+        fill: #1da1f2;
+      }
     }
-  }
-  > .youtube {
-    > svg {
-      width: 100px;
-      padding: 12.5px;
+    > .youtube,
+    .github {
+      > svg {
+        width: 100px;
+        padding: 12.5px;
+      }
     }
   }
 
