@@ -5,12 +5,38 @@ import * as develop02 from 'src/assets/lottie/develop02.json';
 import * as puzzle from 'src/assets/lottie/team_puzzle.json';
 import { LottieCustom } from 'src/components/LottieCustom';
 import styled from 'styled-components';
+import Script from 'next/script';
 
 const Home = () => {
   return (
     <StyledHome>
+      <h2 className="title">progLearning から発足された progLab</h2>
+      <section className="proglearning_section">
+        <h3>プログラミングを好き勝手学んでいる人のYouTubeチャンネル</h3>
+        <div className="subscribe_button">
+          <div
+            className="g-ytsubscribe"
+            data-channelid="UCPcjWvYIfvqGPP4x30kEkMA"
+            data-layout="full"
+            data-count="default"
+          ></div>
+          <Script src="https://apis.google.com/js/platform.js" />
+        </div>
+        <div className="latest_video">
+          <iframe
+            id="latest_video"
+            // src="https://www.youtube.com/embed/?list=UUPcjWvYIfvqGPP4x30kEkMA" // 最新の動画にしたい
+            src="https://www.youtube.com/embed/uRploOYd84w"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+          ></iframe>
+          <label htmlFor="latest_video">progLearning の動画</label>
+        </div>
+        <p></p>
+      </section>
       <h2 className="title">- ¥1320/月から始めるプログラミング学習 -</h2>
-      <section>
+      <section className="proglab_section">
         <div className="text">
           <h3>こんな経験ありませんか？</h3>
           <ul>
@@ -25,7 +51,7 @@ const Home = () => {
           <LottieCustom src={develop01} />
         </div>
       </section>
-      <section className="reverse">
+      <section className="proglab_section reverse">
         <div className="text">
           <h3>現役エンジニアがサポート</h3>
           <p>
@@ -36,7 +62,7 @@ const Home = () => {
           <LottieCustom src={develop02} />
         </div>
       </section>
-      <section>
+      <section className="proglab_section">
         <div className="text">
           <h3>共同開発経験ができる</h3>
           <p>
@@ -56,8 +82,29 @@ const Home = () => {
 
 export default Home;
 
-const StyledHome = styled.div`
+const StyledHome = styled.article`
   font-family: ${({ theme }) => theme.fonts.base};
+  > .proglearning_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    > h3 {
+      margin-top: 12px;
+    }
+    > .subscribe_button {
+      margin: 12px;
+    }
+    > .latest_video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      label {
+        margin-top: 8px;
+      }
+    }
+  }
   > .title {
     text-align: center;
     margin-top: 28px;
@@ -65,7 +112,7 @@ const StyledHome = styled.div`
       font-size: 16px;
     `}
   }
-  > section {
+  > .proglab_section {
     display: flex;
     justify-content: space-evenly;
     align-items: center;

@@ -29,7 +29,7 @@ export const Header = () => {
           <Link href="/contact">
             <a className={pathname === '/contact' ? 'current' : ''}>CONTACT</a>
           </Link>
-          {/* <Link href="/">
+          {/* <Link href="/closer">
             <a>MEMBER</a>
           </Link> */}
         </nav>

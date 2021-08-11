@@ -1,5 +1,5 @@
-import '../styles/globals.css';
-import '../styles/reset.css';
+import 'src/styles/globals.css';
+import 'src/styles/reset.css';
 import Head from 'next/head';
 import { Layout } from 'src/components/Layout';
 import type { AppProps } from 'next/app';
