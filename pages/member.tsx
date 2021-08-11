@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import styled from 'styled-components';
 
-export const MemberPage: VFC = () => {
+const MemberPage: VFC = () => {
   return (
     <StyledMemberPage>
       <h2>会員専用ページ</h2>
@@ -11,3 +11,5 @@ export const MemberPage: VFC = () => {
 };
 
 const StyledMemberPage = styled.div``;
+
+export default MemberPage;
