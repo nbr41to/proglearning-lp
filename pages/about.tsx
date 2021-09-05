@@ -17,6 +17,7 @@ const StyledAbout = styled.div`
   > .about_markdown {
     width: 100%;
     padding: 0 12px;
+    word-wrap: break-word;
     > h2 {
       margin-top: 40px;
       ${({ theme }) => theme.sp`
@@ -25,6 +26,16 @@ const StyledAbout = styled.div`
     }
     > p {
       word-wrap: break-word;
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
+    }
+    li {
+      > p {
+        margin: 0;
+        margin-top: 4px;
+      }
       a {
         color: blue;
         text-decoration: underline;
