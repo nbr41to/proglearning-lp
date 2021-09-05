@@ -36,6 +36,10 @@ const StyledAbout = styled.div`
         margin: 0;
         margin-top: 4px;
       }
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
     }
   }
 `;
