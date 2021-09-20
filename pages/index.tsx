@@ -6,6 +6,8 @@ import * as puzzle from 'src/assets/lottie/team_puzzle.json';
 import { LottieCustom } from 'src/components/LottieCustom';
 import styled from 'styled-components';
 import Script from 'next/script';
+import { BigButton } from 'src/components/atoms/BigButton';
+import Router from 'next/router';
 
 const Home = () => {
   return (
@@ -75,6 +77,10 @@ const Home = () => {
       </section>
       <div className="home_markdown">
         <HomeMDX />
+      </div>
+      <div className="big_buttons">
+        <BigButton label="詳しく" onClick={() => Router.push('/about')} />
+        <BigButton label="申し込む" onClick={() => Router.push('/contact')} />
       </div>
     </StyledHome>
   );
@@ -184,5 +190,11 @@ const StyledHome = styled.article`
     ul {
       padding-left: 16px;
     }
+  }
+  .big_buttons {
+    margin: 40px 0 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 `;
