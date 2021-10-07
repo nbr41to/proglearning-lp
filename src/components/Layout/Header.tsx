@@ -81,11 +81,13 @@ const HeaderStyled = styled.header`
   nav {
     display: flex;
     flex-wrap: wrap;
+    ${({ theme }) => theme.sp`
+      justify-content: space-around;
+    `}
     > a {
       padding: 8px 24px;
       border-left: 1px solid #cffff1;
       ${({ theme }) => theme.sp`
-        padding: 12px 24px;
         border-left: none;
       `}
       &.current {

@@ -26,6 +26,7 @@ const StyledBigButton = styled.div`
 
   width: 200px;
   height: 130px;
+  margin-bottom: 24px;
 
   &:hover .btn-emergency-top {
     top: 10px;
