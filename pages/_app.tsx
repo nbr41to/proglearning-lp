@@ -17,7 +17,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <title>progLab</title>
           <meta
             name="description"
-            content="楽しくプログラミングを学べる成長サポートコミュニティ 'progLab' は人生を変えるためのメソッドを提供します。"
+            content="楽しくプログラミングを学べる成長サポートコミュニティ `progLab` は人生を変えるためのメソッドを提供します。"
+          />
+          <meta property="og:title" content="progLab" />
+          <meta
+            property="og:description"
+            content="楽しくプログラミングを学べる成長サポートコミュニティ `progLab` は人生を変えるためのメソッドを提供します。"
           />
         </Head>
         <Component {...pageProps} />

@@ -33,7 +33,6 @@ const Home = () => {
             allowFullScreen
             frameBorder="0"
           ></iframe>
-          <label htmlFor="latest_video">progLearning の動画</label>
         </div>
         <p></p>
       </section>
@@ -102,12 +101,16 @@ const StyledHome = styled.article`
       margin: 12px;
     }
     > .latest_video {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      label {
-        margin-top: 8px;
+      max-width: 600px;
+      width: 90%;
+      padding-top: 32%;
+      position: relative;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
     }
   }
