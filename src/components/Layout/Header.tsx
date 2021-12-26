@@ -17,16 +17,16 @@ export const Header = () => {
       </div>
       <nav className="flex gap-4">
         <Link href="/">
-          <a className={pathname === '/' ? 'text-orange-400' : ''}>HOME</a>
+          <a className={pathname === '/' ? 'text-amber-500' : ''}>HOME</a>
         </Link>
         <Link href="/about">
-          <a className={pathname === '/about' ? 'text-orange-400' : ''}>ABOUT</a>
+          <a className={pathname === '/about' ? 'text-amber-500' : ''}>ABOUT</a>
         </Link>
-        <Link href="/activities">
-          <a className={pathname === '/activities' ? 'text-orange-400' : ''}>ACTIVITIES</a>
+        <Link href="/news">
+          <a className={pathname === '/news' ? 'text-amber-500' : ''}>NEWS</a>
         </Link>
         <Link href="/contact">
-          <a className={pathname === '/contact' ? 'text-orange-400' : ''}>CONTACT</a>
+          <a className={pathname === '/contact' ? 'text-amber-500' : ''}>CONTACT</a>
         </Link>
       </nav>
     </header>
