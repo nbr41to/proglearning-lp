@@ -1,16 +1,23 @@
 import { Hero } from './Hero';
+import { Case } from './Case';
+import { Introduction } from './Introduction';
+import { Relation } from './Relation';
+import { LinkButton } from '../@commons/Button/LinkButton';
+import { BurnerSnap } from '../@commons/BurnerSnap';
 
 export const HomePage = () => {
   return (
-    <div>
+    <div className="space-y-20">
       <Hero />
-      <h2>最近の活動</h2>
-      <h2>質問形</h2>
-      <h2>共感型</h2>
-      <h2>提供しているサービス</h2>
-      <h3>progLearning</h3>
-      <h3>progLab</h3>
-      <h2>提供しているサービス</h2>
+      <BurnerSnap />
+      <Introduction />
+      <Case />
+      <Relation />
+      <div className="flex gap-8 justify-center items-center pb-12">
+        <LinkButton label="もっと詳しく" href="/about" />
+        <LinkButton label="お問い合わせ" href="/contact" />
+        <LinkButton label="お申し込み" href="/application" />
+      </div>
     </div>
   );
 };

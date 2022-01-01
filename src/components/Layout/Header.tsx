@@ -8,27 +8,36 @@ export const Header = () => {
   const { pathname } = router;
 
   return (
-    <header className="px-8 py-2 flex justify-between items-center shadow">
-      <div className="flex items-center gap-4 cursor-pointer" onClick={() => router.push('/')}>
-        <div className="image_container">
-          <Image src={logo1} width={54} height={50} />
+    <header className="fixed z-50 w-full bg-white shadow">
+      <div className="flex justify-between items-center py-2 px-8 mx-auto max-w-[1024px]">
+        <div className="flex gap-4 items-center cursor-pointer" onClick={() => router.push('/')}>
+          <div className="">
+            <Image src={logo1} width={54} height={50} />
+          </div>
+          <div className="text-3xl text-slate-700">progLearning</div>
         </div>
-        <h1 className="text-3xl text-gray-700">progLearning</h1>
+        <div className="flex">
+          <nav className="flex gap-8">
+            <Link href="/">
+              <a className={pathname === '/' ? 'text-gray-700' : 'text-gray-400'}>HOME</a>
+            </Link>
+            <Link href="/about">
+              <a className={pathname === '/about' ? 'text-gray-700' : 'text-gray-400'}>ABOUT</a>
+            </Link>
+            <Link href="/news">
+              <a className={pathname === '/news' ? 'text-gray-700' : 'text-gray-400'}>BLOG</a>
+            </Link>
+            <Link href="/contact">
+              <a className={pathname === '/contact' ? 'text-gray-700' : 'text-gray-400'}>CONTACT</a>
+            </Link>
+          </nav>
+          <div className="pl-8 ml-8 border-l-2">
+            <Link href="/application">
+              <a className="py-3 px-4 font-bold text-white bg-amber-400 rounded-md border">お申し込み</a>
+            </Link>
+          </div>
+        </div>
       </div>
-      <nav className="flex gap-4">
-        <Link href="/">
-          <a className={pathname === '/' ? 'text-amber-500' : ''}>HOME</a>
-        </Link>
-        <Link href="/about">
-          <a className={pathname === '/about' ? 'text-amber-500' : ''}>ABOUT</a>
-        </Link>
-        <Link href="/news">
-          <a className={pathname === '/news' ? 'text-amber-500' : ''}>NEWS</a>
-        </Link>
-        <Link href="/contact">
-          <a className={pathname === '/contact' ? 'text-amber-500' : ''}>CONTACT</a>
-        </Link>
-      </nav>
     </header>
   );
 };

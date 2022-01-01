@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+
 const learningContents = [
   'HTML',
   'CSS',
@@ -15,9 +17,39 @@ const learningContents = [
 ];
 
 export const AboutProgLearningPage = () => {
+  const router = useRouter();
+
   return (
     <div>
-      <h2 className="text-2xl">About progLearning</h2>
+      <div className="py-8">
+        {/* progLearning */}
+        <div className="fixed top-0 right-0 z-10 pb-12 text-white">
+          <div className="flex flex-col justify-center items-center w-60 h-60 bg-amber-400 rounded-bl-full">
+            <div className="pt-12 pr-4 space-y-4 w-full text-right">
+              <div className="text-xs">プログラミング学習コミュニティ</div>
+              <div className="text-lg font-bold">`progLab`</div>
+              <div>の方を</div>
+            </div>
+          </div>
+          <div
+            className="flex absolute bottom-0 left-12 justify-center items-center w-24 h-24 bg-red-300 rounded-full active:brightness-75 animate-bounce hover:animate-none cursor-pointer"
+            onClick={() => router.push('/about/proglab')}
+          >
+            <p className=" text-lg font-bold">詳しく</p>
+          </div>
+        </div>
+        <h1 className="text-xl text-center">
+          プログラミング学習コミュニティ<span className="text-2xl font-bold text-teal-300">`progLearning`</span>
+        </h1>
+      </div>
+      {/* Section1 */}
+      <div className="py-12 text-center">
+        <h2 className="my-12 text-3xl font-bold">わかりやすいをプレゼント</h2>
+        <p className="mx-auto max-w-lg text-slate-500">
+          せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。
+        </p>
+      </div>
+      {/* Section2 */}
       <div className="flex flex-col gap-12 py-8">
         <div>
           <h3 className="text-xl">プログラミング学習コンテンツの提供</h3>
@@ -25,38 +57,17 @@ export const AboutProgLearningPage = () => {
             progLearningとは,2020年に教員を退職し,地道に努力を重ねることでフリーランスエンジニアになった管理人のnobが学習内容をアウトプットするために始めたYouTubeチャンネルの名前です.プログラミングを勉強する楽しさを多くの人と共有したいという気持ちからコツコツと発信を続けて参りました.これからはYouTubeだけでなく,プログラミングを学習するためのコンテンツを多く提供していきたいと思っております.そして,そんな私のコンテンツを利用することで,一人でも多くの支えになることができれば幸いです.
           </p>
           <p>YouTubeチャンネルはこちら（もちろん無料公開）</p>
-          <iframe
-            className="aspect-video"
-            src="https://www.youtube.com/embed/?list=UUPcjWvYIfvqGPP4x30kEkMA"
-            frameBorder="0"
-          ></iframe>
+          <div className="w-96">
+            <iframe
+              className="aspect-video"
+              src="https://www.youtube.com/embed/?list=UUPcjWvYIfvqGPP4x30kEkMA"
+              frameBorder="0"
+            ></iframe>
+          </div>
         </div>
         <div>
-          <h3 className="text-xl">主な学習内容</h3>
-          <ul className="flex flex-wrap gap-3 my-2">
-            {learningContents.map((content) => (
-              <li key={content} className="px-2 py-1 ring-1 rounded-md">
-                {content}
-              </li>
-            ))}
-          </ul>
-          <p className="p-2">
-            私が勉強した道行きがそのままコンテンツになっております.HTML/CSSから始めてフロントエンドのReactを学び,FirebaseやAWSなどAPIやDBに少しずつふれることで,バックエンドのNode.jsやGo言語などに興味を持つようになっていきました.{' '}
-          </p>
-        </div>
-        <div>
-          <h3 className="text-xl">
-            プログラミングを勉強するのって楽しいよね！そもそも勉強することって楽しかったんだね！を伝えたい.
-          </h3>
-          <p className="p-2">
-            プログラミングを学習してフリーランスになった私が最も伝えたいことは,「みんなエンジニア転職しようぜwww給料ウハウハwで人生最高wwwwぶはぁw¥www」みたいなことでは,ありません.それは「学ぶことによる幸福を知ってほしい」ということです.おそらく日本で教育を受けた多くの人は「勉強は苦しくて嫌い」と思っていることでしょう.（もちろん私もそうでした.）この概念を20代,30代とずっと持っていると,やがて生きづらいということに気がつく人が多いです.そんな中一人でも多くの人が学ぶことに喜びを感じるように成長してくれたらいいなという想いを持っています.{' '}
-          </p>
-        </div>
-        <div>
-          <h3 className="text-xl">初学者のための”わかりやすい”を重視したコンテンツ</h3>
-          <p className="p-2">
-            いくつかのプログラミング学習スクールでの経験や実際に周りにいるエンジニアを観察していて思ったことがあります.「できるエンジニア＝説明が上手である」とうわけではないということです.エンジニアの多くはコミュニケーションがそれほど得意でなく,相手の気持ちや背景を考えずに,機会に命令するように教える人は多いです.だからこそ,元教員の私は教わる人の気持ちに寄り添ったわかりやすさを提供したいと考えております.{' '}
-          </p>
+          <h3 className="text-xl">フロントエンドエンジニアになるための教材アプリ</h3>
+          <p className="p-2">Coming soon</p>
         </div>
       </div>
     </div>

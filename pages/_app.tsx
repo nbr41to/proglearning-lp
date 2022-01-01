@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { Layout } from 'src/components/Layout';
 import type { AppProps } from 'next/app';
 import usePageViewHook from 'src/lib/usePageViewHook';
-
 // import 'src/styles/reset.css';
 import 'src/styles/globals.css';
 
