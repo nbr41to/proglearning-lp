@@ -9,14 +9,17 @@ export const Header = () => {
 
   return (
     <header className="fixed z-50 w-full bg-white shadow">
-      <div className="flex justify-between items-center py-2 px-8 mx-auto max-w-[1024px]">
-        <div className="flex gap-4 items-center cursor-pointer" onClick={() => router.push('/')}>
-          <div className="">
+      <div className="flex flex-wrap justify-center items-center py-2 px-2 mx-auto max-w-[1024px] sm:justify-between sm:px-8">
+        <div className="flex gap-2 items-center mr-6 cursor-pointer sm:gap-4" onClick={() => router.push('/')}>
+          <div className="block sm:hidden">
+            <Image src={logo1} width={40} height={36} />
+          </div>
+          <div className="hidden sm:block">
             <Image src={logo1} width={54} height={50} />
           </div>
-          <div className="text-3xl text-slate-700">progLearning</div>
+          <div className="text-2xl font-bold text-slate-700 sm:text-3xl sm:font-normal">progLearning</div>
         </div>
-        <div className="flex">
+        <div className="hidden justify-end py-4 ml-auto sm:flex">
           <nav className="flex gap-8">
             <Link href="/">
               <a className={pathname === '/' ? 'text-gray-700' : 'text-gray-400'}>HOME</a>
@@ -24,8 +27,8 @@ export const Header = () => {
             <Link href="/about">
               <a className={pathname === '/about' ? 'text-gray-700' : 'text-gray-400'}>ABOUT</a>
             </Link>
-            <Link href="/news">
-              <a className={pathname === '/news' ? 'text-gray-700' : 'text-gray-400'}>BLOG</a>
+            <Link href="/blog">
+              <a className={pathname === '/blog' ? 'text-gray-700' : 'text-gray-400'}>BLOG</a>
             </Link>
             <Link href="/contact">
               <a className={pathname === '/contact' ? 'text-gray-700' : 'text-gray-400'}>CONTACT</a>

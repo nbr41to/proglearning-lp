@@ -4,16 +4,16 @@ export const Hero = () => {
   const router = useRouter();
 
   return (
-    <>
-      <div className="py-10 text-center">
-        <div className="my-14 text-5xl font-bold animate-pulse md:text-8xl">
-          <div className="mb-2">Change your life</div>
+    <div className="p-4 text-center sm:py-10 sm:px-0">
+      <div className="">
+        <div className="my-6 text-4xl font-bold animate-pulse sm:my-14 sm:text-8xl">
+          <div className="leading-snug">Change your life</div>
           <div>
             by <span className="text-teal-300">Learning</span>
           </div>
         </div>
-        <div>
-          <span className="font-bold text-amber-400">`progLearning`</span>{' '}
+        <div className="px-4 text-xs sm:text-base">
+          <span className="text-base font-bold text-amber-400">`progLearning`</span>{' '}
           はプログラミング学習支援のためのコンテンツを提供します。
         </div>
       </div>
@@ -27,6 +27,6 @@ export const Hero = () => {
         </button>
         <div>us!!</div>
       </div>
-    </>
+    </div>
   );
 };

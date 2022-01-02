@@ -3,7 +3,7 @@ import { CaseItem } from './CaseItem';
 export const Case = () => {
   return (
     <div className="py-10 bg-slate-50 rounded">
-      <h2 className="mb-6 text-2xl font-bold text-center">こんな経験ありませんか？</h2>
+      <h2 className="mb-6 text-xl font-bold text-center sm:text-2xl">こんな経験ありませんか？</h2>
       <div className="flex flex-wrap gap-8 justify-center p-4">
         <div className="space-y-8">
           <CaseItem

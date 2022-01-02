@@ -10,7 +10,7 @@ type Props = {
 
 export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotation, titleSize = 'text-2xl' }) => {
   return (
-    <div className="py-12 px-4 mx-auto max-w-3xl text-center">
+    <div className="py-6 px-4 mx-auto max-w-3xl text-center md:py-12">
       <div className="">
         <h2 className={`${titleSize} font-bold`}>{title}</h2>
         <p className="mt-6 leading-8 text-slate-500">{paragraph}</p>

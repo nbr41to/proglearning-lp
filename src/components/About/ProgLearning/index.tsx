@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { SectionColumn } from 'src/components/@commons/SectionColumn';
 
 const learningContents = [
   'HTML',
@@ -27,7 +28,7 @@ export const AboutProgLearningPage = () => {
           <div className="flex flex-col justify-center items-center w-60 h-60 bg-amber-400 rounded-bl-full">
             <div className="pt-12 pr-4 space-y-4 w-full text-right">
               <div className="text-xs">プログラミング学習コミュニティ</div>
-              <div className="text-lg font-bold">`progLab`</div>
+              <div className="pr-4 text-lg font-bold">`progLab`</div>
               <div>の方を</div>
             </div>
           </div>
@@ -43,12 +44,10 @@ export const AboutProgLearningPage = () => {
         </h1>
       </div>
       {/* Section1 */}
-      <div className="py-12 text-center">
-        <h2 className="my-12 text-3xl font-bold">わかりやすいをプレゼント</h2>
-        <p className="mx-auto max-w-lg text-slate-500">
-          せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。
-        </p>
-      </div>
+      <SectionColumn
+        title="わかりやすいをプレゼント"
+        paragraph="私は2020年よりプログラミングの学習を始めました。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。"
+      />
       {/* Section2 */}
       <div className="flex flex-col gap-12 py-8">
         <div>
@@ -59,7 +58,7 @@ export const AboutProgLearningPage = () => {
           <p>YouTubeチャンネルはこちら（もちろん無料公開）</p>
           <div className="w-96">
             <iframe
-              className="aspect-video"
+              className="aspect-video w-96"
               src="https://www.youtube.com/embed/?list=UUPcjWvYIfvqGPP4x30kEkMA"
               frameBorder="0"
             ></iframe>
@@ -67,7 +66,7 @@ export const AboutProgLearningPage = () => {
         </div>
         <div>
           <h3 className="text-xl">フロントエンドエンジニアになるための教材アプリ</h3>
-          <p className="p-2">Coming soon</p>
+          <p className="p-2">Coming soon ...</p>
         </div>
       </div>
     </div>

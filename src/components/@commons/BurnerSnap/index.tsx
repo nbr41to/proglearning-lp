@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import { useCallback, useLayoutEffect, useState } from 'react';
 import test from 'src/assets/first-view.jpg';
+import burner1 from 'src/assets/top_burner/1.png';
+import burner2 from 'src/assets/top_burner/2.png';
+import burner3 from 'src/assets/top_burner/3.png';
+import burner4 from 'src/assets/top_burner/4.png';
 
 export const BurnerSnap = () => {
   /* 現在のスクロースの番号 */
@@ -31,7 +35,7 @@ export const BurnerSnap = () => {
   }, [viewIndex]);
 
   /* 選択したバナーにスクロール */
-  const handleViewChange = (viewIndex) => {
+  const handleViewChange = (viewIndex: number) => {
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + viewIndex);
     container.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
@@ -51,30 +55,30 @@ export const BurnerSnap = () => {
   return (
     <div className="w-full">
       <div className="flex justify-center items-center">
-        <button onClick={prevView}>
+        <button className="hidden sm:block" onClick={prevView}>
           <i className="text-slate-300 bx bxs-chevron-left bx-lg"></i>
         </button>
-        <div id="container" className="flex overflow-x-auto gap-6 mx-4 w-[760px] snap-x">
-          <div className="shrink-0 w-[36px] snap-center"></div>
-          <div id="view1" className="shrink-0 w-[600px] snap-center">
-            <Image src={test} className="shrink-0 w-full rounded-lg" />
+        <div id="container" className="flex overflow-x-auto gap-6 py-4 w-[760px] snap-x">
+          <div className="shrink-0 w-[36px] rounded-r-lg shadow-md snap-center"></div>
+          <div id="view1" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
+            <Image src={burner1} />
           </div>
-          <div id="view2" className="shrink-0 w-[600px] snap-center">
-            <Image src={test} className="shrink-0 w-full rounded-lg" />
+          <div id="view2" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
+            <Image src={burner2} />
           </div>
-          <div id="view3" className="shrink-0 w-[600px] snap-center">
-            <Image src={test} className="shrink-0 w-full rounded-lg" />
+          <div id="view3" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
+            <Image src={burner3} />
           </div>
-          <div id="view4" className="shrink-0 w-[600px] snap-center">
-            <Image src={test} className="shrink-0 w-full rounded-lg" />
+          <div id="view4" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
+            <Image src={burner4} />
           </div>
-          <div className="shrink-0 w-[36px] snap-center"></div>
+          <div className="shrink-0 w-[36px] rounded-l-lg shadow-md snap-center"></div>
         </div>
-        <button onClick={nextView}>
+        <button className="hidden sm:block" onClick={nextView}>
           <i className="text-slate-300 bx bxs-chevron-right bx-lg"></i>
         </button>
       </div>
-      <div className="py-4 space-x-4 text-center">
+      <div className="py-2 space-x-4 text-center">
         {[1, 2, 3, 4].map((i) => (
           <span
             key={i}

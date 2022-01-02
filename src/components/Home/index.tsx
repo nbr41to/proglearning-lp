@@ -7,7 +7,7 @@ import { BurnerSnap } from '../@commons/BurnerSnap';
 
 export const HomePage = () => {
   return (
-    <div className="space-y-20">
+    <div className="space-y-8 sm:space-y-20">
       <Hero />
       <BurnerSnap />
       <Introduction />
