@@ -6,7 +6,7 @@ const AboutProgLab: NextPage = () => {
   return (
     <>
       <Head>
-        <title>About | progLearning</title>
+        <title>progLab</title>
       </Head>
       <AboutProgLabPage />
     </>

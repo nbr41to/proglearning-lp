@@ -39,7 +39,7 @@ const NewsDetail: NextPage<Props> = ({ article }) => {
   return (
     <>
       <Head>
-        <title>{`${title} | progLearning`}</title>
+        <title>{`${title} | progL`}</title>
       </Head>
       <BlogDetailPage article={article} />
     </>

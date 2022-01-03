@@ -18,7 +18,7 @@ const News: NextPage<Props> = ({ articles }) => {
   return (
     <>
       <Head>
-        <title>Blog | progLearning</title>
+        <title>Blog | progL</title>
       </Head>
       <BlogPage articles={articles} />
     </>

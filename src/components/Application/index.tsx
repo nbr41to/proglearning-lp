@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box } from '../@commons/Box';
 import { PageTitle } from '../@commons/PageTitle';
+import { SectionColumn } from '../@commons/SectionColumn';
 
 export const ApplicationPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,6 +67,10 @@ export const ApplicationPage = () => {
           )}
         </div>
       </Box>
+      <SectionColumn
+        title="プログラミング講座をご希望の方"
+        paragraph="プログラミングの講座やマンツーマンのレッスン（オンライン）などをご希望の方は恐れ入りますが、お問い合わせページよりご連絡をお願いいたします。"
+      />
     </div>
   );
 };
