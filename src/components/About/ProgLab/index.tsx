@@ -15,9 +15,9 @@ export const AboutProgLabPage = () => {
 
   return (
     <div className="space-y-12">
-      <div className="py-8">
-        {/* progLearning */}
-        <div className="fixed top-0 right-0 z-10 pb-12 text-white">
+      <div className="mt-12 sm:m-0">
+        {/* progLearningへ PC */}
+        <div className="hidden fixed top-0 right-0 z-10 pb-12 text-white sm:block">
           <div className="flex flex-col justify-center items-center w-60 h-60 bg-teal-300 rounded-bl-full">
             <div className="pt-12 pr-4 space-y-4 w-full text-right">
               <div className="text-xs">プログラミング学習コンテンツ</div>
@@ -32,38 +32,70 @@ export const AboutProgLabPage = () => {
             <p className=" text-lg font-bold">詳しく</p>
           </div>
         </div>
-        <h1 className="text-xl text-center">
+        {/* progLearningへ SP */}
+        <div
+          className="overflow-y-hidden fixed top-14 z-10 py-4 w-full bg-teal-300 shadow sm:hidden"
+          onClick={() => router.push('/about/proglearning')}
+        >
+          <div className="relative z-10 text-sm font-bold text-center text-white ">
+            学習コンテンツ`progLearning`を詳しく
+          </div>
+          <div className="absolute -top-4 w-32 h-32 bg-sky-400 rounded-full"></div>
+        </div>
+        <h1 className="text-lg text-center sm:text-xl">
           プログラミング学習コミュニティ<span className="text-2xl font-bold text-amber-400">`progLab`</span>
         </h1>
       </div>
+
       {/* Section1 */}
-      <div className="mx-auto max-w-2xl">
-        <h2 className="my-20 text-7xl font-bold text-center">圧倒的、破格。</h2>
-        <div className="flex justify-center items-center">
-          <ul className="space-y-2 w-1/2 font-bold">
-            <li>✅ 現役エンジニアに質問し放題</li>
-            <li>✅ 学習やキャリアに関する相談し放題</li>
-            <li>✅ 最新の情報にふれやすくなる</li>
-            <li>✅ 実務レベルの開発を体験できる</li>
-            <li>✅ スキルレベルに応じて案件の紹介</li>
-          </ul>
-          <div className="w-1/2 text-center">
-            <h3 className="text-lg font-bold">元教員エンジニアだから提供できる価値</h3>
-            <p className="mt-4 text-sm text-slate-500">
-              progLabはプログラミングを学習したい人にとっては、間違いなく価格以上の価値を提供するサービスです。技術的な質問に答えるだけでなく、わかりやすい説明や相手の状況に適した対応をすることで成長をサポートします。また、勉強やキャリアに関する悩みを相談し放題で、心理学の知見に基づいたアドバイスをさせていただきます。
+      <div className="mx-auto max-w-3xl">
+        <h2 className="pl-6 my-8 text-5xl font-bold text-center sm:my-20 sm:text-7xl">圧倒的、破格。</h2>
+        <div className="flex flex-wrap gap-y-6 justify-around items-center">
+          <div className="w-80 text-center">
+            <h3 className="text-lg font-bold">踏み出す人の味方になります。</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-500">
+              progLabはプログラミングを学習したい人にとっては、間違いなく価格以上の価値を提供するサービスです。技術的な質問に答えるだけでなく、元教員のエンジニアならではのわかりやすい説明や相手の状況に適した対応をすることで成長をサポートします。また、勉強やキャリアに関する悩みを相談し放題で、心理学の知見に基づいたアドバイスをさせていただきます。
             </p>
           </div>
+          <ul className="pl-4 space-y-2 w-80 font-bold">
+            <li className="flex gap-1 items-center">
+              <i className="text-amber-400 bx bxs-check-square bx-sm"></i>
+              <span className="text-slate-700">現役エンジニアに質問し放題</span>
+            </li>
+            <li className="flex gap-1 items-center">
+              <i className="text-amber-400 bx bxs-check-square bx-sm"></i>
+              <span className="text-slate-700">学習やキャリアに関する相談し放題</span>
+            </li>
+            <li className="flex gap-1 items-center">
+              <i className="text-amber-400 bx bxs-check-square bx-sm"></i>
+              <span className="text-slate-700">最新の情報が手に入る環境</span>
+            </li>
+            <li className="flex gap-1 items-center">
+              <i className="text-amber-400 bx bxs-check-square bx-sm"></i>
+              <span className="text-slate-700">実務レベルの開発を体験できる</span>
+            </li>
+            <li className="flex gap-1 items-center">
+              <i className="text-amber-400 bx bxs-check-square bx-sm"></i>
+              <span className="text-slate-700">スキルに応じた案件を紹介</span>
+            </li>
+            <li className="flex gap-1 items-center">
+              <i className="text-amber-400 bx bxs-check-square bx-sm"></i>
+              <span className="text-slate-700">`わかりやすい`がもれなくついてくる</span>
+            </li>
+          </ul>
         </div>
       </div>
+
       {/* Section2 */}
       <SectionColumn
         title="¥1320/月で仲間と一緒にプログラミング学習を始めよう 👨‍💻"
         paragraph="progLabはSlackを使ったオンラインコミュニティです。Slack内の様々なチャンネルにおいてプログラミング学習のためになるような環境をご用意させていただいております。また、ボイスチャットも並行して活用しており、迅速な質問対応や、楽しく話をしながら学習を進めることができます。"
       />
+
       {/* Section3 */}
       <SectionColumn
         title="コミュニティ内の活動 🏂"
-        paragraph="Slackやボイスチャットを使った活動の一部を紹介させていただきます。現在は15名程度で活動しており、コミュニティ内の活動は会員さんの提案によるものも多いです。楽しく成長できる活動の提案をお待ちしております。"
+        paragraph="以下にSlackやボイスチャットを使ったコミュニティ内における活動の一部を紹介させていただきます。現在は15名程度で活動しており、コミュニティ内の活動は会員さんの提案によるものも多いです。楽しく成長できる活動の提案をお待ちしております。"
       />
       <SectionColumn
         title="🚀 定期開催「今週どうでしょう会」"
@@ -73,7 +105,7 @@ export const AboutProgLabPage = () => {
       />
       <SectionWithImage
         title="質問し放題 🙋‍♀️"
-        paragraph="#question チャンネルではどんな質問もし放題となっております。解決を約束することはできませんが、24時間以内の応答はお約束いたします。また、私以外にも優しい現役エンジニアが多数在籍しているため、多様な回答が望むことができます。"
+        paragraph="#question チャンネルではどんな質問もし放題となっており、24時間以内の応答が期待できます。また、私以外にも優しい現役エンジニアが多数在籍しているため、多様な回答が望むことができます。"
         imageSrc={question}
       />
       <SectionWithImage
@@ -99,26 +131,33 @@ export const AboutProgLabPage = () => {
         imageSrc={development}
       />
       <SectionColumn
-        title="顔出し任意の匿名参加でOK 👯‍♀️"
-        paragraph="このコミュニティの活動でビデオをオンにするようなものはなく、原則はSlackによるチャットとボイスチャットルームへの参加のみになります。どの時間帯でも気軽に活動ができるような配慮をしております。また、信用に関しては、入会時のビデオチャット面接と月額制会員というところで果たされていると考えております。気分を害するような事があれば、すぐに管理人までご連絡ください。"
+        title="顔出しは任意、匿名の参加でOK 👯‍♀️"
+        paragraph="このコミュニティの活動でビデオをオンにするようなものはなく、原則はSlackによるチャットとボイスチャットルームへの参加のみになります。どの時間帯でも気軽に活動ができるような配慮をしております。また、信用に関しては、入会時の管理人とのビデオチャット面接と月額制会員というところで果たされていると考えております。気分を害するような事があれば、すぐに管理人までご連絡ください。"
       />
+
       {/* Section4 */}
       <SectionColumn
         title="エンジニア内定者続出 🎉"
-        paragraph="2021年4月から発足してから、少しずつこのコミュニティからエンジニア転職を成功させた方が出てきております。私としては大変嬉しい気持ちもありますが、これが終わりではなく、その後も楽しく学びを続けることができるようにサポートし、キャリアを伸ばせるような環境の提供を目指しております💪"
+        paragraph="2021年4月から発足してから、少しずつこのコミュニティからエンジニア転職を成功させた方が出てきております。管理人としては大変嬉しい気持ちもありますが、これが終わりではなく、その後も楽しく学びを続けることができるようにサポートし、キャリアを伸ばせるような環境の提供を目指しております💪"
       />
+
       {/* Section5 */}
-      <div className="py-12 text-center">
-        <h2 className="my-12 text-2xl font-bold">今だけ初月無料 💨</h2>
-        <p className="mx-auto max-w-lg text-slate-500">
-          こちらよりお申し込みいただくことで、初月無料で加入することができます。1ヶ月の体験入会としてでも構いませんので、一緒にプログラミングを勉強できることを楽しみにしております。
-        </p>
-        <div className="mt-8 space-x-6">
-          <LinkButton href="/application" label="初月無料で申し込む" />
-          <Link href="/contact">
-            <a className="text-amber-400">まずは無料相談 →</a>
-          </Link>
+      <div>
+        <SectionColumn
+          title="今だけ初月無料 💨"
+          paragraph="こちらよりお申し込みいただくことで、初月無料で加入することができます。1ヶ月の体験入会としてでも構いませんので、一緒にプログラミングを勉強できることを楽しみにしております。"
+        />
+        <div className="flex flex-wrap gap-4 justify-center items-center px-6 mt-8">
+          <LinkButton href="/application" fill label="初月無料で申し込む" />
+          <LinkButton href="/contact" label="まずは無料相談 →" />
         </div>
+      </div>
+
+      {/* Section6 */}
+      <div className="py-12 px-6 mx-auto space-y-2 max-w-lg text-xs text-slate-500">
+        <p>※ 案件の紹介をお約束するコミュニティではございません。</p>
+        <p>※ エンジニア転職をお約束するコミュニティではございません。</p>
+        <p>※ 質問対応はに24時間以内に解決をお約束するものではございません。</p>
       </div>
     </div>
   );

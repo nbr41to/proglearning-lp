@@ -1,12 +1,13 @@
 import { useRouter } from 'next/router';
+import { Box } from '../@commons/Box';
 
 export const TwoContent = () => {
   const router = useRouter();
 
   return (
-    <div className="p-12 bg-slate-100 rounded-2xl">
+    <Box className="p-12">
       <p className="mb-12 text-lg text-center text-slate-500 underline">プログラミング学習をいろんな角度でサポート</p>
-      <div className="flex flex-wrap gap-32 justify-center items-center">
+      <div className="flex flex-wrap gap-x-32 gap-y-12 justify-center items-center">
         {/* progLearning */}
         <div className="relative pb-12 text-white">
           <div
@@ -40,6 +41,6 @@ export const TwoContent = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Box>
   );
 };

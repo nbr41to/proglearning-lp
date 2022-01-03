@@ -1,11 +1,12 @@
+import { Box } from 'src/components/@commons/Box';
 import { CaseItem } from './CaseItem';
 
 export const Case = () => {
   return (
-    <div className="py-10 bg-slate-50 rounded">
-      <h2 className="mb-6 text-xl font-bold text-center sm:text-2xl">こんな経験ありませんか？</h2>
-      <div className="flex flex-wrap gap-8 justify-center p-4">
-        <div className="space-y-8">
+    <div className="py-12">
+      <h2 className="text-xl font-bold text-center underline sm:text-2xl">こんな経験ありませんか？</h2>
+      <Box className="flex flex-wrap gap-8 justify-evenly p-10 mt-12">
+        <div className="space-y-10">
           <CaseItem
             title="プログラミングの学習に挫折したことがある🙉"
             paragraph="プログラミングの学習は挫折しやすいと言われているそうです。三度挫折してもエンジニアになった私だからこそのその理由から心理学的に挫折しにくい勉強の続け方を伝えることができます。"
@@ -27,7 +28,7 @@ export const Case = () => {
             linkTo="proglab"
           />
         </div>
-        <div className="space-y-8">
+        <div className="space-y-10">
           <CaseItem
             title="プログラミング学習が流行っているが実際にどんな感じかわからない🙉"
             paragraph="progLearningはプログラミング学習の記録を初学者だったことから記録しており、無料で公開しております。また,勉強した内容とその感想もアウトプットしているので、ぜひご活用ください。"
@@ -49,7 +50,7 @@ export const Case = () => {
             linkTo="proglab"
           />
         </div>
-      </div>
+      </Box>
     </div>
   );
 };

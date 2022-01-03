@@ -6,15 +6,14 @@ type Props = {
   paragraph: string;
   imageSrc?: StaticImageData;
   annotation?: string;
-  titleSize?: string;
 };
 
-export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotation, titleSize = 'text-2xl' }) => {
+export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotation }) => {
   return (
-    <div className="py-6 px-4 mx-auto max-w-3xl text-center md:py-12">
+    <div className="py-8 px-4 mx-auto max-w-3xl text-center sm:py-12">
       <div className="">
-        <h2 className={`${titleSize} font-bold`}>{title}</h2>
-        <p className="mt-6 leading-8 text-slate-500">{paragraph}</p>
+        <h2 className="text-lg font-bold sm:text-2xl">{title}</h2>
+        <p className="mt-4 text-sm leading-7 text-slate-500 sm:mt-6 sm:text-base sm:leading-10">{paragraph}</p>
       </div>
       {imageSrc && (
         <div className="p-4 mt-6 rounded shadow-lg">

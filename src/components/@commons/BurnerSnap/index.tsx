@@ -1,5 +1,5 @@
 import { useCallback, useLayoutEffect, useState } from 'react';
-import test from 'src/assets/first-view.jpg';
+import burner0 from 'src/assets/top_burner/0.png';
 import burner1 from 'src/assets/top_burner/1.png';
 import burner2 from 'src/assets/top_burner/2.png';
 import burner3 from 'src/assets/top_burner/3.png';
@@ -9,8 +9,8 @@ import { BurnerItem } from './BurnerItem';
 /* バナーの画像とリンク先の設定 */
 const burnerItems = [
   {
-    href: '#',
-    imageSrc: test,
+    href: '/contact',
+    imageSrc: burner0,
   },
   {
     href: '/about/proglearning',
@@ -27,10 +27,6 @@ const burnerItems = [
   {
     href: '/about/proglearning',
     imageSrc: burner4,
-  },
-  {
-    href: '#',
-    imageSrc: test,
   },
 ];
 

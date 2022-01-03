@@ -11,8 +11,9 @@ export const BlogDetailPage: VFC<Props> = ({ article }) => {
   const blocks = article.children.results;
 
   return (
-    <div className="">
-      <div className="py-4 border-b">
+    <div className="space-y-4">
+      {/* TitleやTags */}
+      <div className="py-4 px-6 border-b">
         <h2 className="text-xl text-center">{title}</h2>
         <div className="space-x-2 text-right">
           {tags?.map((tag: any) => (
@@ -22,7 +23,9 @@ export const BlogDetailPage: VFC<Props> = ({ article }) => {
           ))}
         </div>
       </div>
-      <div className="py-8 mx-auto space-y-4 max-w-2xl">
+
+      {/* BlogContents */}
+      <div className="p-4 mx-auto space-y-4 max-w-2xl">
         {blocks?.map((block: any) => {
           /* blockがparagraphだった場合 */
           if (block.type === 'paragraph') {
