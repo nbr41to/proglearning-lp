@@ -10,6 +10,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: { article },
+    revalidate: 3600, // 60s * 60min
   };
 };
 

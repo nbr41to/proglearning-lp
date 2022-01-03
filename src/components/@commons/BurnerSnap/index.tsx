@@ -1,36 +1,64 @@
-import Image from 'next/image';
 import { useCallback, useLayoutEffect, useState } from 'react';
 import test from 'src/assets/first-view.jpg';
 import burner1 from 'src/assets/top_burner/1.png';
 import burner2 from 'src/assets/top_burner/2.png';
 import burner3 from 'src/assets/top_burner/3.png';
 import burner4 from 'src/assets/top_burner/4.png';
+import { BurnerItem } from './BurnerItem';
+
+/* バナーの画像とリンク先の設定 */
+const burnerItems = [
+  {
+    href: '#',
+    imageSrc: test,
+  },
+  {
+    href: '/about/proglearning',
+    imageSrc: burner1,
+  },
+  {
+    href: '/about/proglearning',
+    imageSrc: burner2,
+  },
+  {
+    href: '/about/proglearning',
+    imageSrc: burner3,
+  },
+  {
+    href: '/about/proglearning',
+    imageSrc: burner4,
+  },
+  {
+    href: '#',
+    imageSrc: test,
+  },
+];
 
 export const BurnerSnap = () => {
-  /* 現在のスクロースの番号 */
-  const [viewIndex, setViewIndex] = useState(1);
+  /* 現在のスクロールの番号 */
+  const [viewIndex, setViewIndex] = useState(0);
 
   /* 次のバナーへスクロール */
   const nextView = useCallback(() => {
     let nextIndex = viewIndex + 1;
-    if (nextIndex === 5) {
-      nextIndex = 1;
+    if (nextIndex === burnerItems.length) {
+      nextIndex = 0;
     }
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + nextIndex);
-    container.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    container.scrollTo({ left: target.offsetLeft - 50, behavior: 'smooth' });
     setViewIndex(nextIndex);
   }, [viewIndex]);
 
   /* 前へのバナーへスクロール */
   const prevView = useCallback(() => {
     let nextIndex = viewIndex - 1;
-    if (nextIndex === 0) {
-      nextIndex = 4;
+    if (nextIndex === -1) {
+      nextIndex = burnerItems.length - 1;
     }
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + nextIndex);
-    container.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    container.scrollTo({ left: target.offsetLeft - 50, behavior: 'smooth' });
     setViewIndex(nextIndex);
   }, [viewIndex]);
 
@@ -38,7 +66,7 @@ export const BurnerSnap = () => {
   const handleViewChange = (viewIndex: number) => {
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + viewIndex);
-    container.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    container.scrollTo({ left: target.offsetLeft - 50, behavior: 'smooth' });
     setViewIndex(viewIndex);
   };
 
@@ -59,27 +87,18 @@ export const BurnerSnap = () => {
           <i className="text-slate-300 bx bxs-chevron-left bx-lg"></i>
         </button>
         <div id="container" className="flex overflow-x-auto gap-6 py-4 w-[760px] snap-x">
-          <div className="shrink-0 w-[36px] rounded-r-lg shadow-md snap-center"></div>
-          <div id="view1" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
-            <Image src={burner1} />
-          </div>
-          <div id="view2" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
-            <Image src={burner2} />
-          </div>
-          <div id="view3" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
-            <Image src={burner3} />
-          </div>
-          <div id="view4" className="shrink-0 w-[280px] rounded-lg shadow-md snap-center sm:w-[600px]">
-            <Image src={burner4} />
-          </div>
-          <div className="shrink-0 w-[36px] rounded-l-lg shadow-md snap-center"></div>
+          <div className="shrink-0 w-[56px] rounded-r-lg shadow-md snap-center"></div>
+          {burnerItems.map((item, index) => (
+            <BurnerItem key={'view' + index} id={'view' + index} imageSrc={item.imageSrc} href={item.href} />
+          ))}
+          <div className="shrink-0 w-[56px] rounded-l-lg shadow-md snap-center"></div>
         </div>
         <button className="hidden sm:block" onClick={nextView}>
           <i className="text-slate-300 bx bxs-chevron-right bx-lg"></i>
         </button>
       </div>
       <div className="py-2 space-x-4 text-center">
-        {[1, 2, 3, 4].map((i) => (
+        {burnerItems.map((_, i) => (
           <span
             key={i}
             className={`${

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { VFC } from 'react';
+
 type Props = {
   title: string;
   paragraph: string;

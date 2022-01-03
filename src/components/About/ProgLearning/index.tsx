@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { Box } from 'src/components/@commons/Box';
 import { SectionColumn } from 'src/components/@commons/SectionColumn';
 
 const learningContents = [
@@ -49,26 +50,62 @@ export const AboutProgLearningPage = () => {
         paragraph="私は2020年よりプログラミングの学習を始めました。せっかくなので,知識をわかりやすくまとめてアウトプットしていきます。"
       />
       {/* Section2 */}
-      <div className="flex flex-col gap-12 py-8">
-        <div>
-          <h3 className="text-xl">プログラミング学習コンテンツの提供</h3>
-          <p className="p-2">
-            progLearningとは,2020年に教員を退職し,地道に努力を重ねることでフリーランスエンジニアになった管理人のnobが学習内容をアウトプットするために始めたYouTubeチャンネルの名前です.プログラミングを勉強する楽しさを多くの人と共有したいという気持ちからコツコツと発信を続けて参りました.これからはYouTubeだけでなく,プログラミングを学習するためのコンテンツを多く提供していきたいと思っております.そして,そんな私のコンテンツを利用することで,一人でも多くの支えになることができれば幸いです.
-          </p>
-          <p>YouTubeチャンネルはこちら（もちろん無料公開）</p>
-          <div className="w-96">
-            <iframe
-              className="aspect-video w-96"
-              src="https://www.youtube.com/embed/?list=UUPcjWvYIfvqGPP4x30kEkMA"
-              frameBorder="0"
-            ></iframe>
-          </div>
+      <SectionColumn
+        title="プログラミング学習コンテンツの提供"
+        paragraph="progLearningとは、私が学習内容をアウトプットするために始めたYouTubeチャンネルの名前です。実際にプログラミング学習をして、この楽しさを多くの人と共有したいという気持ちからコツコツと発信を続けて参りました。これからはYouTube以外にも、プログラミングを学習するためのコンテンツを提供することで、一人でも多くの支えになることができれば嬉しいです。"
+      />
+      {/* Section3 */}
+      <div className="flex gap-16 justify-center items-center py-12 px-4">
+        <div className="w-96 shadow-md">
+          <iframe
+            className="aspect-video w-96"
+            src="https://www.youtube.com/embed/?list=UUPcjWvYIfvqGPP4x30kEkMA"
+            frameBorder="0"
+          ></iframe>
         </div>
-        <div>
-          <h3 className="text-xl">フロントエンドエンジニアになるための教材アプリ</h3>
-          <p className="p-2">Coming soon ...</p>
+        <div className="w-96 text-center">
+          <h2 className="text-xl font-bold">YouTubeチャンネル</h2>
+          <p className="mt-6 text-sm leading-8 text-slate-500">
+            プログラミング学習の効率化を目標とした学習内容をアウトプットするためのYouTubeチャンネル。同じようにつまずいた人の助けになっていれば嬉しいです。そしてなによりも、プログラミングを学ぶことの楽しさを多くの人と共有したいという気持ちからコツコツと発信を続けて参りました。
+          </p>
         </div>
       </div>
+      {/* Section4 */}
+      <div className="flex gap-16 justify-center items-center py-12 px-4">
+        <div className="w-96 text-center">
+          <h2 className="text-xl font-bold">Blog記事</h2>
+          <p className="mt-6 text-sm leading-8 text-slate-500">
+            エンジニア向けのプログラミングに関する内容を投稿できるサービスのZennや自分のBlogなどでもテキストベースで様々なことをアウトプットしております。
+          </p>
+        </div>
+        <div className="pl-12 space-y-6 w-96 text-teal-400">
+          <a
+            className="flex gap-2 items-center w-fit hover:text-amber-400 transition cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://noblog.nbr41.com/"
+          >
+            <i className=" bx bxs-right-arrow-circle bx-sm"></i>
+            <div>管理人のZennの記事一覧</div>
+          </a>
+          <a
+            className="flex gap-2 items-center w-fit hover:text-amber-400 transition cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.nbr41.com/blogs"
+          >
+            <i className="bx bxs-right-arrow-circle bx-sm"></i>
+            <div>MyBlogの記事一覧</div>
+          </a>
+        </div>
+      </div>
+      {/* Section5 */}
+      <SectionColumn title="フロントエンドエンジニアになるための教材アプリ" paragraph="Coming soon ... " />
+      {/* Section6 */}
+      <SectionColumn
+        title="プログラミング講師"
+        paragraph="数学やプログラミングの講師としても活動しております。マンツーマンのオンラインレッスンなどをご希望の方は気軽にお問い合わせください。"
+      />
     </div>
   );
 };

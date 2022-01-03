@@ -7,7 +7,7 @@
 誰でも気軽に編集できるように
 
 - yarn で統一
-- styled-components
+- styled-components → tailwind に移行
 - typescript
 - eslint
 - storybook
@@ -15,11 +15,5 @@
 
 ## Issue
 
-- [x] レスポンシブを簡単にかけるように
-      styled-components の theme で実装
-- [x] テーマカラーなど
-      styled-components の theme で実装
-- [ ] max-width を指定
-- [ ] HOME 下部の装飾
-- [ ] ABOUT ページの装飾
-- [ ] meta 情報の設定（Notion のリンクだと HOME の text が表示される）
+- バナーの 2 枚めがスキップされる
+- バナーをスクロールで送ったときにしたの黒ポチも連動するように
