@@ -1,8 +1,8 @@
 import { ReactNode, VFC } from 'react';
-import styled from 'styled-components';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Main } from './Main';
+import { SpMenu } from './SpMenu';
 
 type LayoutProps = {
   children: ReactNode;
@@ -10,22 +10,11 @@ type LayoutProps = {
 
 export const Layout: VFC<LayoutProps> = ({ children }) => {
   return (
-    <StyledLayout>
+    <div className="h-screen">
       <Header />
       <Main>{children}</Main>
       <Footer />
-    </StyledLayout>
+      <SpMenu />
+    </div>
   );
 };
-
-const StyledLayout = styled.div`
-  max-width: 1280px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background-color: #fff;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-`;

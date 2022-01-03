@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo1 from 'src/assets/proglab-logo01.png';
@@ -9,94 +8,43 @@ export const Header = () => {
   const { pathname } = router;
 
   return (
-    <>
-      <HeaderStyled>
-        <Link href="/">
-          <div className="site_logo">
-            <div className="image_container">
-              <Image src={logo1} />
-            </div>
-            <h1>progLab</h1>
+    <header className="fixed z-50 w-full bg-white/80 shadow backdrop-blur-sm">
+      <div className="flex justify-center items-center py-2 px-2 mx-auto max-w-[1024px] sm:justify-between sm:px-6">
+        <div className="flex gap-2 items-center cursor-pointer sm:gap-4" onClick={() => router.push('/')}>
+          <div className="block sm:hidden">
+            <Image src={logo1} width={40} height={36} />
           </div>
-        </Link>
-        <nav>
-          <Link href="/">
-            <a className={pathname === '/' ? 'current' : ''}>HOME</a>
-          </Link>
-          <Link href="/about">
-            <a className={pathname === '/about' ? 'current' : ''}>ABOUT</a>
-          </Link>
-          <Link href="/contact">
-            <a className={pathname === '/contact' ? 'current' : ''}>CONTACT</a>
-          </Link>
-          {/* <Link href="/closer">
-            <a>MEMBER</a>
-          </Link> */}
-        </nav>
-      </HeaderStyled>
-    </>
+          <div className="hidden sm:block">
+            <Image src={logo1} width={54} height={50} />
+          </div>
+          <div className="text-2xl font-bold text-slate-700 sm:text-3xl sm:font-normal">progLearning</div>
+        </div>
+        <div className="hidden justify-end py-4 ml-auto sm:flex">
+          <nav className="flex gap-7">
+            <Link href="/">
+              <a className={pathname === '/' ? 'text-gray-700' : 'text-gray-400'}>HOME</a>
+            </Link>
+            <Link href="/about">
+              <a className={pathname === '/about' ? 'text-gray-700' : 'text-gray-400'}>ABOUT</a>
+            </Link>
+            <Link href="/blog">
+              <a className={pathname === '/blog' ? 'text-gray-700' : 'text-gray-400'}>BLOG</a>
+            </Link>
+            <Link href="/contact">
+              <a className={pathname === '/contact' ? 'text-gray-700' : 'text-gray-400'}>CONTACT</a>
+            </Link>
+          </nav>
+          <div className="hidden relative pl-6 ml-6 border-l-2 md:block">
+            <Link href="/application">
+              <a className="py-3 px-4 font-bold text-white bg-amber-400 rounded-md shadow">お申し込み</a>
+            </Link>
+            <div className="absolute -top-4 -right-2 w-4 h-4">
+              <div className="absolute w-4 h-4 bg-red-400 rounded-full animate-ping"></div>
+              <div className="absolute w-4 h-4 bg-red-300 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
-
-const HeaderStyled = styled.header`
-  width: 100%;
-  font-family: 'Apple LiGothic', sans-serif;
-  font-size: 26px;
-  color: #fff;
-  background-color: ${({ theme }) => theme.colors.main};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  ${({ theme }) => theme.sp`
-    justify-content: center;
-    flex-wrap: wrap;
-    `}
-
-  .site_logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    ${({ theme }) => theme.sp`
-      width: 100%;
-      background-color: #fff;
-      color: ${({ theme }) => theme.colors.main};
-      `}
-    .image_container {
-      margin-top: 8px;
-      margin-left: 20px;
-      width: 60px;
-      filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
-      ${({ theme }) => theme.sp`
-        width: 50px;
-      `}
-    }
-    > h1 {
-      padding: 16px 20px;
-      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    ${({ theme }) => theme.sp`
-      justify-content: space-around;
-    `}
-    > a {
-      padding: 8px 24px;
-      border-left: 1px solid #cffff1;
-      ${({ theme }) => theme.sp`
-        border-left: none;
-      `}
-      &.current {
-        color: ${(props) => props.theme.colors.orange};
-      }
-      &:hover {
-        color: ${(props) => props.theme.colors.orange};
-        transition: 0.6s;
-      }
-    }
-  }
-`;

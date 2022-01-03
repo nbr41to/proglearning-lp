@@ -1,23 +1,9 @@
 import { ReactNode, VFC } from 'react';
-import styled from 'styled-components';
-import { FirstView } from './FirstView';
-import { useRouter } from 'next/router';
 
 type MainProps = {
   children: ReactNode;
 };
 
 export const Main: VFC<MainProps> = ({ children }) => {
-  const router = useRouter();
-  return (
-    <>
-      {router.pathname === '/' && <FirstView />}
-      <StyledMain>{children}</StyledMain>
-    </>
-  );
+  return <main className="py-24 mx-auto max-w-[1024px] min-h-full sm:py-32">{children}</main>;
 };
-
-const StyledMain = styled.div`
-  width: 100%;
-  padding: 12px 20px;
-`;

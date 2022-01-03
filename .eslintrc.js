@@ -23,7 +23,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react-hooks', 'react', '@typescript-eslint'],
+  plugins: ['react-hooks', 'react', '@typescript-eslint', 'tailwindcss'],
   // 基本的にルールは recommended に従う
   // prettier は配列の最後尾に書く
   extends: [
@@ -32,6 +32,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:tailwindcss/recommended',
     'prettier',
   ],
   rules: {

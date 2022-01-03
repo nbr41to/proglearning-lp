@@ -1,37 +1,36 @@
+import Link from 'next/link';
 import { VFC } from 'react';
-import styled from 'styled-components';
 
 export const Footer: VFC = () => {
   return (
-    <FooterStyled>
-      <div className="copyright">
-        Copylight 2021
-        <a href="#">progL</a>
+    <footer className="relative bottom-0 py-8 text-gray-500 bg-slate-100">
+      {/* SiteMap */}
+      <div className="w-full">
+        <h4 className="font-bold text-center">About more</h4>
+        <div className="flex flex-wrap gap-8 justify-center items-center px-6 mt-6 text-sm underline">
+          <div className="flex flex-col gap-8">
+            <Link href="/about/proglearning">
+              <a className="hover:text-gray-700">学習コンテンツ`progLearning`を詳しく</a>
+            </Link>
+            <Link href="/about/proglab">
+              <a className="hover:text-gray-700">学習コミュニティ`progLab`を詳しく</a>
+            </Link>
+          </div>
+          <div className="flex flex-col gap-8">
+            <Link href="/contact">
+              <a className="hover:text-gray-700">お問い合わせ</a>
+            </Link>
+            <Link href="/application">
+              <a className="hover:text-gray-700">お申し込み</a>
+            </Link>
+          </div>
+        </div>
       </div>
-    </FooterStyled>
+
+      {/* Copyright */}
+      <div className="mt-12 text-sm text-center text-slate-500 drop-shadow">
+        Copyright 2021 progLearning. All Rights Reserved.
+      </div>
+    </footer>
   );
 };
-
-const FooterStyled = styled.footer`
-  width: 100%;
-  padding: 12px 24px;
-  border-top: 1px solid #ccc;
-
-  color: ${(props) => props.theme.colors.orange};
-  text-align: center;
-  font-weight: bold;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-
-  /* position: relative;
-  left: 0;
-  bottom: 0; */
-
-  > .copyright {
-    font-size: 16px;
-    > a {
-      font-family: 'Apple LiGothic', sans-serif;
-      font-size: 24px;
-      margin: 0 6px;
-    }
-  }
-`;
