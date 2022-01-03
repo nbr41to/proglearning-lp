@@ -14,7 +14,7 @@ export const BurnerItem: VFC<Props> = ({ href, imageSrc, id }) => {
   return (
     <div
       id={id}
-      className="shrink-0 w-[280px] rounded-lg shadow-md cursor-pointer snap-center sm:w-[600px]"
+      className="shrink-0 w-[280px] rounded-lg shadow-md cursor-pointer snap-center sm:w-[480px] md:w-[600px]"
       onClick={() => router.push(href)}
     >
       <Image src={imageSrc} />

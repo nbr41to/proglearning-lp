@@ -1,14 +1,15 @@
 import Image from 'next/image';
-import { VFC } from 'react';
+import { ReactNode, VFC } from 'react';
 
 type Props = {
   title: string;
   paragraph: string;
   imageSrc?: StaticImageData;
   annotation?: string;
+  children?: ReactNode;
 };
 
-export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotation }) => {
+export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotation, children }) => {
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl text-center sm:py-12">
       <div className="">
@@ -21,6 +22,7 @@ export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotati
         </div>
       )}
       {annotation && <div className="mt-8 text-sm text-slate-500">{annotation}</div>}
+      {children}
     </div>
   );
 };

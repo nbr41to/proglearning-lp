@@ -1,4 +1,5 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
+import Script from 'next/script';
+import { useCallback, useEffect, useState } from 'react';
 import burner0 from 'src/assets/top_burner/0.png';
 import burner1 from 'src/assets/top_burner/1.png';
 import burner2 from 'src/assets/top_burner/2.png';
@@ -42,7 +43,7 @@ export const BurnerSnap = () => {
     }
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + nextIndex);
-    container.scrollTo({ left: target.offsetLeft - 50, behavior: 'smooth' });
+    container.scrollTo({ left: target.offsetLeft - target.offsetWidth / 2, behavior: 'smooth' });
     setViewIndex(nextIndex);
   }, [viewIndex]);
 
@@ -54,7 +55,7 @@ export const BurnerSnap = () => {
     }
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + nextIndex);
-    container.scrollTo({ left: target.offsetLeft - 50, behavior: 'smooth' });
+    container.scrollTo({ left: target.offsetLeft - target.offsetWidth / 2, behavior: 'smooth' });
     setViewIndex(nextIndex);
   }, [viewIndex]);
 
@@ -62,15 +63,15 @@ export const BurnerSnap = () => {
   const handleViewChange = (viewIndex: number) => {
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + viewIndex);
-    container.scrollTo({ left: target.offsetLeft - 50, behavior: 'smooth' });
+    container.scrollTo({ left: target.offsetLeft - target.offsetWidth / 2, behavior: 'smooth' });
     setViewIndex(viewIndex);
   };
 
   /* バナーを自動送りに */
-  useLayoutEffect(() => {
+  useEffect(() => {
     const nextTimer = setTimeout(() => {
       nextView();
-    }, 5000);
+    }, 4000);
     return () => {
       clearTimeout(nextTimer);
     };
@@ -82,12 +83,12 @@ export const BurnerSnap = () => {
         <button className="hidden sm:block" onClick={prevView}>
           <i className="text-slate-300 bx bxs-chevron-left bx-lg"></i>
         </button>
-        <div id="container" className="flex overflow-x-auto gap-6 py-4 w-[760px] snap-x">
-          <div className="shrink-0 w-[56px] rounded-r-lg shadow-md snap-center"></div>
+        <div id="container" className="flex overflow-x-auto gap-6 py-4 w-[380px] snap-x sm:w-[640px] md:w-[760px]">
+          <div className="shrink-0 w-[24px] rounded-r-lg shadow-md snap-center sm:w-[56px]"></div>
           {burnerItems.map((item, index) => (
             <BurnerItem key={'view' + index} id={'view' + index} imageSrc={item.imageSrc} href={item.href} />
           ))}
-          <div className="shrink-0 w-[56px] rounded-l-lg shadow-md snap-center"></div>
+          <div className="shrink-0 w-[24px] rounded-l-lg shadow-md snap-center sm:w-[56px]"></div>
         </div>
         <button className="hidden sm:block" onClick={nextView}>
           <i className="text-slate-300 bx bxs-chevron-right bx-lg"></i>
@@ -104,6 +105,8 @@ export const BurnerSnap = () => {
           ></span>
         ))}
       </div>
+      {/* Safari対策 */}
+      <Script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js" />
     </div>
   );
 };
