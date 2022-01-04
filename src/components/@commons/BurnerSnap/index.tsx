@@ -43,7 +43,9 @@ export const BurnerSnap = () => {
     }
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + nextIndex);
-    container.scrollTo({ left: target.offsetLeft - target.offsetWidth / 2, behavior: 'smooth' });
+    /* targetの左からの位置 - containerの左からの位置 - バナーの半分の距離 */
+    const moveRange = target.offsetLeft - container.offsetLeft - target.offsetWidth / 2;
+    container.scrollTo({ left: moveRange, behavior: 'smooth' });
     setViewIndex(nextIndex);
   }, [viewIndex]);
 
@@ -55,7 +57,8 @@ export const BurnerSnap = () => {
     }
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + nextIndex);
-    container.scrollTo({ left: target.offsetLeft - target.offsetWidth / 2, behavior: 'smooth' });
+    const moveRange = target.offsetLeft - container.offsetLeft - target.offsetWidth / 2;
+    container.scrollTo({ left: moveRange, behavior: 'smooth' });
     setViewIndex(nextIndex);
   }, [viewIndex]);
 
@@ -63,7 +66,8 @@ export const BurnerSnap = () => {
   const handleViewChange = (viewIndex: number) => {
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + viewIndex);
-    container.scrollTo({ left: target.offsetLeft - target.offsetWidth / 2, behavior: 'smooth' });
+    const moveRange = target.offsetLeft - container.offsetLeft - target.offsetWidth / 2;
+    container.scrollTo({ left: moveRange, behavior: 'smooth' });
     setViewIndex(viewIndex);
   };
 

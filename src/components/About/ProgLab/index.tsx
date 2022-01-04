@@ -106,7 +106,7 @@ export const AboutProgLabPage = () => {
       <div className="py-12 px-6 mx-auto space-y-2 max-w-lg text-xs text-slate-500">
         <p>※ 案件の紹介をお約束するコミュニティではございません。</p>
         <p>※ エンジニア転職をお約束するコミュニティではございません。</p>
-        <p>※ 質問対応はに24時間以内に解決をお約束するものではございません。</p>
+        <p>※ 質問対応は解決をお約束するものではございません。</p>
       </div>
     </div>
   );

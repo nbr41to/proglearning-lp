@@ -3,9 +3,16 @@ import { Box } from '../@commons/Box';
 import { PageTitle } from '../@commons/PageTitle';
 import { SectionColumn } from '../@commons/SectionColumn';
 
+const checkItems = [
+  'お申し込み後、Slackのワークスペースへの招待メールが届きますのでご確認ください。メールアドレスに間違いがある場合は招待メールが届きませんのでご注意ください。',
+  '招待後にSlackのDMで日程調整をし、15分ほどのビデオ通話で初回面談を行います。',
+  'こちらは、エンジニア転職や案件の紹介を約束するものではなく、あくまでもコミュニケーションを提供するサービスとなっております。',
+  '他のメンバーを不快にさせるなどの迷惑行為が見られた際は、強制退会をさせていただく場合がございます。',
+];
+
 export const ApplicationPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [checkLength, setCheckLength] = useState(Array(5).fill(false));
+  const [checkLength, setCheckLength] = useState(Array(checkItems.length).fill(false));
 
   const handleCheck = (index: number) => {
     if (isOpen) return;
@@ -20,33 +27,27 @@ export const ApplicationPage = () => {
       <Box className="p-8">
         <div className="mx-auto space-y-4 max-w-2xl text-sm accent-teal-300">
           <h2 className="p-2 text-lg text-center">以下の項目をご確認の上、お申し込みください 🙇‍♂️</h2>
-          <div className="flex gap-3 items-center">
-            <input type="checkbox" disabled={isOpen} onChange={() => handleCheck(0)} />
-            <span>
-              お申し込み後、Slackのワークスペースへの招待メールが届きますのでご確認ください。メールアドレスに間違いがある場合は招待メールが届きませんのでご注意ください。
-            </span>
-          </div>
-          <div className="flex gap-3 items-center">
-            <input type="checkbox" disabled={isOpen} onChange={() => handleCheck(1)} />
-            <span>招待後にSlackのDMで日程調整をし、15分ほどのビデオ通話で初回面談を行います。</span>
-          </div>
-          <div className="flex gap-3 items-center">
-            <input type="checkbox" disabled={isOpen} onChange={() => handleCheck(2)} />
-            <span>
-              こちらは、エンジニア転職や案件の紹介を約束するものではなく、あくまでもコミュニケーションを提供するサービスとなっております。
-            </span>
-          </div>
-          <div className="flex gap-3 items-center">
-            <input type="checkbox" disabled={isOpen} onChange={() => handleCheck(3)} />
-            <span>
-              他のメンバーを不快にさせるなどの迷惑行為が見られた際は、強制退会をさせていただく場合がございます。
-            </span>
-          </div>
+          {checkItems.map((item, index) => (
+            <div key={index} className="flex gap-3 items-center">
+              {checkLength[index] ? (
+                <i
+                  className="text-red-500 cursor-pointer bx bx-checkbox-checked bx-md"
+                  onClick={() => handleCheck(index)}
+                ></i>
+              ) : (
+                <i
+                  className="text-slate-400 cursor-pointer bx bx-checkbox bx-md"
+                  onClick={() => handleCheck(index)}
+                ></i>
+              )}
+              <span>{item}</span>
+            </div>
+          ))}
         </div>
-        <div className="p-8 text-center">
+        <div className="py-8 -mx-8 text-center">
           {!isOpen ? (
             <button
-              disabled={checkLength.filter((v) => v).length !== 4}
+              disabled={checkLength.filter((v) => v).length !== checkItems.length}
               className="py-3 px-4 font-bold text-white bg-teal-300 hover:bg-teal-400 disabled:bg-slate-300 rounded"
               onClick={() => setIsOpen(true)}
             >
