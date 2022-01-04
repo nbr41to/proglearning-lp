@@ -13,13 +13,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="学ぶことで人生に変化を。`progLearning` はプログラミング学習支援コンテンツを提供しております。"
+          content="「学ぶことで人生に変化を。」`progLearning` は、一歩踏み出したい人のプログラミング学習を支援しております。"
         />
         <meta property="og:title" content="progLearning" />
         <meta
           property="og:description"
-          content="学ぶことで人生に変化を。`progLearning` はプログラミング学習支援コンテンツを提供しております。"
+          content="「学ぶことで人生に変化を。」`progLearning` は、一歩踏み出したい人のプログラミング学習を支援しております。"
         />
+        <meta property="og:image" content="./site_image.png" />
         <title>progLearning</title>
       </Head>
       <Component {...pageProps} />
