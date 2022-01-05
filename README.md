@@ -1,5 +1,7 @@
 # progLab のランディングページ
 
+https://proglab.nbr41.com/
+
 ## policy
 
 みんなで作れるように
