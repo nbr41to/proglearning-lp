@@ -39,6 +39,9 @@ export const AboutProgLearningPage = () => {
             学習コミュニティ`progLab`を詳しく
           </div>
           <div className="absolute -top-4 w-32 h-32 bg-red-300 rounded-full"></div>
+          <div className="absolute top-4 right-4 text-white ">
+            <i className="bx bxs-hand-up bx-sm bx-burst"></i>
+          </div>
         </div>
         <h1 className="text-lg text-center sm:text-xl">
           プログラミング学習コンテンツ<span className="text-2xl font-bold text-teal-300">`progLearning`</span>
