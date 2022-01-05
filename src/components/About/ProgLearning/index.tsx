@@ -39,8 +39,10 @@ export const AboutProgLearningPage = () => {
             学習コミュニティ`progLab`を詳しく
           </div>
           <div className="absolute -top-4 w-32 h-32 bg-red-300 rounded-full"></div>
-          <div className="absolute top-4 right-4 text-white ">
-            <i className="bx bxs-hand-up bx-sm bx-burst"></i>
+          <div className="absolute right-2 bottom-0 text-white">
+            <i className="bx bxs-hand-up bx-sm bx-fade-down"></i>
+            <div className="absolute -top-2 right-2 w-4 h-4 bg-white/50 rounded-full animate-ping"></div>
+            <div className="absolute -top-2 right-2 w-4 h-4 bg-white/40 rounded-full"></div>
           </div>
         </div>
         <h1 className="text-lg text-center sm:text-xl">
