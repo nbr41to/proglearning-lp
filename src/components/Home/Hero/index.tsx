@@ -1,8 +1,6 @@
-import { useRouter } from 'next/router';
+import { LinkButton } from 'src/components/@commons/Button/LinkButton';
 
 export const Hero = () => {
-  const router = useRouter();
-
   return (
     <div className="py-4 text-center sm:py-16">
       <div className="">
@@ -17,15 +15,19 @@ export const Hero = () => {
           はプログラミング学習支援のためのコンテンツを提供します。
         </div>
       </div>
-      <div className="flex justify-center items-center py-4 mx-6 mt-8 bg-slate-100 sm:mt-16 sm:rounded-md sm:border">
-        <div>Come and</div>
-        <button
-          className="py-2 px-4 mx-3 font-bold text-white bg-amber-400 rounded-md border shadow-md"
-          onClick={() => router.push('/about/proglab')}
-        >
-          join
-        </button>
-        <div>us!!</div>
+      {/* PC */}
+      <div className="hidden justify-center items-center mt-8 sm:flex sm:mt-12">
+        <LinkButton
+          size="large"
+          label="Come and join us!!"
+          // className="flex justify-center items-center py-4 px-7 text-xl font-bold text-white bg-amber-400 rounded-lg shadow"
+          href="/about/proglab"
+          fill
+        />
+      </div>
+      {/* SP */}
+      <div className="flex justify-center items-center mt-8 sm:hidden sm:mt-12">
+        <LinkButton size="medium" label="Come and join us!!" href="/about/proglab" fill />
       </div>
     </div>
   );
