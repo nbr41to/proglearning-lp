@@ -23,7 +23,7 @@ export const CategoryCard: VFC<CategoryCardProps> = ({ className, category, href
         </a>
       </div>
       <div className="absolute inset-1 -z-10 w-32 h-32 bg-gray-600 rounded-2xl shadow"></div>
-      <div className="absolute inset-2 w-2 h-2 bg-gray-600 rounded-full shadow"></div>
+      <div className="absolute inset-2 w-2 h-2 bg-gray-600 rounded-full"></div>
     </div>
   );
 };

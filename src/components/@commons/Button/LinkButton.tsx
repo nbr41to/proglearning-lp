@@ -18,12 +18,18 @@ export const LinkButton: React.FC<Props> = ({
   href,
 }) => {
   const colorNames = `${
-    primary ? (fill ? 'bg-teal-300 font-bold' : 'text-teal-300') : fill ? 'bg-amber-400  font-bold' : 'text-amber-400'
+    primary
+      ? fill
+        ? 'bg-teal-300 font-bold  shadow'
+        : 'text-teal-300'
+      : fill
+      ? 'bg-amber-400 font-bold  shadow'
+      : 'text-amber-400'
   }`;
   const sizeNames = {
-    small: 'text-sm px-2 py-2 shadow-sm',
-    medium: 'px-5 py-3 shadow',
-    large: 'text-xl px-6 py-3 shadow-md tracking-wider',
+    small: 'text-sm px-2 py-2',
+    medium: 'px-5 py-3',
+    large: 'text-xl px-6 py-3 tracking-wider',
   }[size];
 
   return (

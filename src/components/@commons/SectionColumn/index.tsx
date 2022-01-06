@@ -11,10 +11,10 @@ type Props = {
 
 export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotation, children }) => {
   return (
-    <div className="py-8 px-4 mx-auto max-w-3xl text-center sm:py-12">
+    <div className="py-8 px-4 mx-auto max-w-3xl sm:py-12">
       <div className="">
-        <h2 className="text-lg font-bold sm:text-2xl">{title}</h2>
-        <p className="mt-4 text-sm leading-7 text-slate-500 sm:mt-6 sm:text-base sm:leading-10">{paragraph}</p>
+        <h2 className="text-lg font-bold text-center sm:text-2xl">{title}</h2>
+        <p className="mt-4 text-sm leading-7 text-slate-500 sm:mt-6 sm:text-base sm:leading-9">{paragraph}</p>
       </div>
       {imageSrc && (
         <div className="p-4 mt-6 rounded shadow-lg">

@@ -35,7 +35,7 @@ const memberDescriptions = [
     comment: '',
   },
   {
-    name: '30代弾税N.K',
+    name: '30代男性N.K',
     liveIn: '神奈川',
     hobby: 'ゲームとスノボー',
     oden: '牛すじ',
@@ -50,7 +50,7 @@ export const Members = () => {
   return (
     <div className="py-8 mx-auto max-w-3xl sm:py-12">
       <h2 className="text-lg font-bold text-center sm:text-2xl">こんなメンバーがいます 💁‍♂️</h2>
-      <Box className="flex flex-col flex-wrap gap-y-6 justify-center items-center p-6 mt-6 md:max-h-[1000px]">
+      <Box className="flex flex-col flex-wrap gap-8 justify-center content-center items-center p-8 mt-6 md:max-h-[1000px]">
         {memberDescriptions.map((description, index) => (
           <MemberCard key={index} description={description} />
         ))}
