@@ -4,8 +4,8 @@ import { CaseItem } from './CaseItem';
 export const Case = () => {
   return (
     <div className="py-12">
-      <h2 className="text-xl font-bold text-center underline sm:text-2xl">こんな経験ありませんか？</h2>
-      <Box className="flex flex-wrap gap-8 justify-evenly p-10 mt-12">
+      <h2 className="text-xl font-bold text-center sm:text-2xl">こんな経験はありませんか？</h2>
+      <Box className="flex flex-wrap gap-10 justify-center p-10 mx-auto mt-12 max-w-3xl">
         <div className="space-y-10">
           <CaseItem
             title="プログラミングの学習に挫折したことがある🙉"

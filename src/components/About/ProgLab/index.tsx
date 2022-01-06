@@ -36,8 +36,10 @@ export const AboutProgLabPage = () => {
             学習コンテンツ`progLearning`を詳しく
           </div>
           <div className="absolute -top-4 w-32 h-32 bg-sky-400 rounded-full"></div>
-          <div className="absolute top-4 right-4 text-white ">
-            <i className="bx bxs-hand-up bx-sm bx-burst"></i>
+          <div className="absolute right-2 bottom-0 text-white">
+            <i className="bx bxs-hand-up bx-sm bx-fade-down"></i>
+            <div className="absolute -top-2 right-2 w-4 h-4 bg-white/50 rounded-full animate-ping"></div>
+            <div className="absolute -top-2 right-2 w-4 h-4 bg-white/40 rounded-full"></div>
           </div>
         </div>
         <h1 className="text-lg text-center sm:text-xl">
@@ -49,10 +51,11 @@ export const AboutProgLabPage = () => {
       <div className="mx-auto max-w-3xl">
         <h2 className="pl-6 my-8 text-5xl font-bold text-center sm:my-20 sm:text-7xl">圧倒的、破格。</h2>
         <div className="flex flex-wrap gap-y-6 justify-around items-center">
-          <div className="w-80 text-center">
-            <h3 className="text-lg font-bold">踏み出す人の味方になります。</h3>
+          <div className="w-80">
+            <h3 className="text-lg font-bold text-center">踏み出す人の味方になります。</h3>
             <p className="mt-4 text-sm leading-7 text-slate-500">
-              progLabはプログラミングを学習したい人にとっては、間違いなく価格以上の価値を提供するサービスです。技術的な質問に答えるだけでなく、元教員のエンジニアならではのわかりやすい説明や相手の状況に適した対応をすることで成長をサポートします。また、勉強やキャリアに関する悩みを相談し放題で、心理学の知見に基づいたアドバイスをさせていただきます。
+              progLab
+              はプログラミングを学習したい人にとって、間違いなく価格以上の価値を提供するサービスです。技術的な質問に答えるだけでなく、元教員のエンジニアならではのわかりやすい説明や相手の状況に適した対応をすることで成長をサポートします。また、勉強やキャリアに関する悩みを相談し放題で、心理学の知見に基づいたアドバイスをさせていただきます。
             </p>
           </div>
           <ul className="pl-4 space-y-2 w-80 font-bold">
@@ -105,8 +108,8 @@ export const AboutProgLabPage = () => {
         </div>
       </SectionColumn>
 
-      {/* Section7 */}
-      <div className="py-12 px-6 mx-auto space-y-2 max-w-lg text-xs text-slate-500">
+      {/* Cautions */}
+      <div className="py-12 px-6 mx-auto space-y-2 w-fit max-w-lg text-xs text-slate-500">
         <p>※ 案件の紹介をお約束するコミュニティではございません。</p>
         <p>※ エンジニア転職をお約束するコミュニティではございません。</p>
         <p>※ 質問対応は解決をお約束するものではございません。</p>

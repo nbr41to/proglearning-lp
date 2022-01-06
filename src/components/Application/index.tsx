@@ -23,7 +23,7 @@ export const ApplicationPage = () => {
 
   return (
     <div className="space-y-12">
-      <PageTitle title="お申し込み" description="progLabへのお申し込みはこちらからお願いいたします。" />
+      <PageTitle title="お申し込み" description="progLab へのお申し込みはこちらからお願いいたします。" />
       <Box className="p-8">
         <div className="mx-auto space-y-4 max-w-2xl text-sm accent-teal-300">
           <h2 className="p-2 text-lg text-center">以下の項目をご確認の上、お申し込みください 🙇‍♂️</h2>

@@ -15,7 +15,7 @@ type Props = {
 
 export const MemberCard: VFC<Props> = ({ description }) => {
   return (
-    <div className="p-4 w-72 bg-white rounded-lg divide-y">
+    <div className="p-4 w-80 bg-white rounded-lg divide-y">
       <div className="flex gap-4 items-center pb-2">
         <i className={`bx bxs-user-detail bx-lg ${description.iconColorName}`}></i>
         <span className="font-bold">

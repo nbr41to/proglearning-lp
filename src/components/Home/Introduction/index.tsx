@@ -3,9 +3,9 @@ import profile from 'src/assets/profile.png';
 
 export const Introduction = () => {
   return (
-    <div className="py-10 px-6 text-center">
-      <h2 className="mb-6 text-xl font-bold sm:text-2xl">未経験からエンジニアになるためのメソッドを提供</h2>
-      <p className="m-auto mb-8 max-w-lg text-sm text-slate-500 sm:text-base">
+    <div className="py-10 px-6">
+      <h2 className="mb-6 text-xl font-bold text-center sm:text-2xl">未経験からエンジニアになるためのメソッドを提供</h2>
+      <p className="m-auto mb-8 max-w-xl text-sm leading-relaxed text-slate-500 sm:text-base sm:leading-relaxed">
         教員を退職してから半年でフリーランスWebエンジニアになった個人が趣味でプログラミング学習を支援しております。難しいと思われがちなプログラミング学習を、わかりやすく解説したり、挫折しないような環境作りをサポートすることで、一歩踏み出した人を応援しています。
       </p>
       <div className="flex flex-col-reverse justify-center items-center space-x-4 text-left sm:flex-row">
