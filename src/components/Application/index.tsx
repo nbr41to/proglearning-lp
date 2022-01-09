@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import { Box } from '../@commons/Box';
 import { PageTitle } from '../@commons/PageTitle';
@@ -23,7 +24,19 @@ export const ApplicationPage = () => {
 
   return (
     <div className="space-y-12">
-      <PageTitle title="お申し込み" description="progLab へのお申し込みはこちらからお願いいたします。" />
+      <PageTitle
+        title="お申し込み"
+        description={
+          <>
+            こちらは progLab へのお申し込み画面になります。
+            <br />
+            progLab に関する詳しい説明は
+            <Link href="/about/proglab">
+              <a className="px-1 font-bold underline">こちら</a>
+            </Link>
+          </>
+        }
+      />
       <Box className="p-8">
         <div className="mx-auto space-y-4 max-w-2xl text-sm accent-teal-300">
           <h2 className="p-2 text-lg text-center">以下の項目をご確認の上、お申し込みください 🙇‍♂️</h2>
@@ -70,7 +83,15 @@ export const ApplicationPage = () => {
       </Box>
       <SectionColumn
         title="プログラミング講座をご希望の方"
-        paragraph="プログラミングの講座やマンツーマンのレッスン（オンライン）などをご希望の方は恐れ入りますが、お問い合わせページよりご連絡をお願いいたします。"
+        paragraph={
+          <>
+            プログラミングの講座やマンツーマンのレッスン（オンライン）などをご希望の方は恐れ入りますが、
+            <Link href="/contact">
+              <a className="px-1 font-bold underline">お問い合わせページ</a>
+            </Link>
+            よりご連絡をお願いいたします。
+          </>
+        }
       />
     </div>
   );

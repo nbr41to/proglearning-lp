@@ -13,6 +13,7 @@ export const YouTube = () => {
           src="https://www.youtube.com/embed/?list=UUPcjWvYIfvqGPP4x30kEkMA"
           frameBorder="0"
         ></iframe>
+        <p className="mt-3 text-sm text-center text-slate-500">最新の動画</p>
       </div>
     </div>
   );

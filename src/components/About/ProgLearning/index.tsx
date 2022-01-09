@@ -28,7 +28,7 @@ export const AboutProgLearningPage = () => {
         </div>
         {/* progLabへ SP */}
         <div
-          className="overflow-y-hidden fixed top-14 z-10 py-4 w-full bg-amber-400 shadow sm:hidden"
+          className="overflow-y-hidden fixed top-14 z-50 py-4 w-full bg-amber-400 shadow sm:hidden"
           onClick={() => router.push('/about/proglab')}
         >
           <div className="relative z-10 text-sm font-bold text-center text-white ">
