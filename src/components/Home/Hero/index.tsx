@@ -11,8 +11,10 @@ export const Hero = () => {
           </div>
         </div>
         <div className="px-6 mt-8 text-xs tracking-wider sm:mt-16 sm:text-base">
-          <span className="text-base font-bold text-amber-400">`progLearning`</span>{' '}
-          はプログラミング学習支援のためのコンテンツを提供します。
+          <span className="px-2 text-base font-bold text-teal-300">`progLearning`</span>
+          <span className="">はプログラミング学習による</span>
+          <span className="px-2 text-base font-bold text-amber-400">`あなたの変化`</span>
+          <span className="">をサポートします。</span>
         </div>
       </div>
       {/* PC */}

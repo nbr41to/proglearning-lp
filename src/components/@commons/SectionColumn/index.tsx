@@ -1,15 +1,14 @@
 import Image from 'next/image';
-import { ReactNode, VFC } from 'react';
+import { FC, ReactNode } from 'react';
 
 type Props = {
   title: string;
-  paragraph: string;
+  paragraph: string | ReactNode;
   imageSrc?: StaticImageData;
   annotation?: string;
-  children?: ReactNode;
 };
 
-export const SectionColumn: VFC<Props> = ({ title, paragraph, imageSrc, annotation, children }) => {
+export const SectionColumn: FC<Props> = ({ title, paragraph, imageSrc, annotation, children }) => {
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl sm:py-12">
       <div className="">

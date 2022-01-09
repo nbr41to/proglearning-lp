@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import { ReactNode, VFC } from 'react';
 
 type Props = {
   title: string;
-  description?: string;
+  description?: string | ReactNode;
   titleSize?: string;
 };
 
@@ -10,7 +10,7 @@ export const PageTitle: VFC<Props> = ({ title, description, titleSize = 'text-2x
   return (
     <div className="px-6 mx-auto max-w-2xl text-center">
       <h1 className={`${titleSize} font-bold`}>{title}</h1>
-      {description && <p className="mt-4 text-slate-500">{description}</p>}
+      {description && <p className="mt-4 leading-relaxed text-slate-500">{description}</p>}
     </div>
   );
 };
