@@ -5,10 +5,10 @@ import burner1 from 'src/assets/top_burner/1.png';
 import burner2 from 'src/assets/top_burner/2.png';
 import burner3 from 'src/assets/top_burner/3.png';
 import burner4 from 'src/assets/top_burner/4.png';
-import { BurnerItem } from './BurnerItem';
+import { BannerItem } from './BannerItem';
 
 /* バナーの画像とリンク先の設定 */
-const burnerItems = [
+const bannerItems = [
   {
     href: '/contact',
     imageSrc: burner0,
@@ -31,14 +31,14 @@ const burnerItems = [
   },
 ];
 
-export const BurnerSnap = () => {
+export const Carousel = () => {
   /* 現在のスクロールの番号 */
   const [viewIndex, setViewIndex] = useState(0);
 
   /* 次のバナーへスクロール */
   const nextView = useCallback(() => {
     let nextIndex = viewIndex + 1;
-    if (nextIndex === burnerItems.length) {
+    if (nextIndex === bannerItems.length) {
       nextIndex = 0;
     }
     const container = window.document.getElementById('container');
@@ -53,7 +53,7 @@ export const BurnerSnap = () => {
   const prevView = useCallback(() => {
     let nextIndex = viewIndex - 1;
     if (nextIndex === -1) {
-      nextIndex = burnerItems.length - 1;
+      nextIndex = bannerItems.length - 1;
     }
     const container = window.document.getElementById('container');
     const target = window.document.getElementById('view' + nextIndex);
@@ -87,10 +87,13 @@ export const BurnerSnap = () => {
         <button className="hidden sm:block" onClick={prevView}>
           <i className="text-slate-300 bx bxs-chevron-left bx-lg"></i>
         </button>
-        <div id="container" className="flex overflow-x-auto gap-6 py-4 w-[380px] snap-x sm:w-[640px] md:w-[760px]">
+        <div
+          id="container"
+          className="flex overflow-x-auto gap-6 py-4 w-[380px] snap-x sm:w-[640px] md:w-[760px] none-scrollbar"
+        >
           <div className="shrink-0 w-[24px] rounded-r-lg shadow-md snap-center sm:w-[56px]"></div>
-          {burnerItems.map((item, index) => (
-            <BurnerItem key={'view' + index} id={'view' + index} imageSrc={item.imageSrc} href={item.href} />
+          {bannerItems.map((item, index) => (
+            <BannerItem key={'view' + index} id={'view' + index} imageSrc={item.imageSrc} href={item.href} />
           ))}
           <div className="shrink-0 w-[24px] rounded-l-lg shadow-md snap-center sm:w-[56px]"></div>
         </div>
@@ -98,8 +101,8 @@ export const BurnerSnap = () => {
           <i className="text-slate-300 bx bxs-chevron-right bx-lg"></i>
         </button>
       </div>
-      <div className="py-2 space-x-4 text-center">
-        {burnerItems.map((_, i) => (
+      <div className="space-x-4 text-center">
+        {bannerItems.map((_, i) => (
           <span
             key={i}
             className={`${

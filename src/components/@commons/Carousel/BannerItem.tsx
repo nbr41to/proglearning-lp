@@ -8,7 +8,7 @@ type Props = {
   imageSrc: StaticImageData;
 };
 
-export const BurnerItem: VFC<Props> = ({ href, imageSrc, id }) => {
+export const BannerItem: VFC<Props> = ({ href, imageSrc, id }) => {
   const router = useRouter();
 
   return (
