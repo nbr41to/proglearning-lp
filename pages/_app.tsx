@@ -28,6 +28,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="twitter:title" content={ogTitle} />
         <meta name="twitter:description" content={ogDescription} />
         <meta name="twitter:image" content={'https://proglab.nbr41.com' + ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Knob_nbr41to" />
 
         <title>progLearning</title>
