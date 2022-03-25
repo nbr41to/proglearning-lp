@@ -7,7 +7,7 @@ import 'src/styles/globals.css';
 const ogTitle = 'progLearning';
 const ogDescription =
   '「学ぶことで人生に変化を。」`progLearning` は、一歩踏み出したい人のプログラミング学習を支援しております。';
-const ogImage = './site_image.png';
+const ogImage = '/site_image.png';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   usePageViewHook();
@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={ogTitle} />
         <meta name="twitter:description" content={ogDescription} />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image" content={'https://proglab.nbr41.com/' + ogImage} />
         <meta name="twitter:url" content="https://proglab.nbr41.com/" />
         <meta name="twitter:site" content="@Knob_nbr41to" />
 
