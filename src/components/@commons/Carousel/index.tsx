@@ -112,8 +112,6 @@ export const Carousel = () => {
           ></span>
         ))}
       </div>
-      {/* Safari対策 */}
-      <Script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js" />
     </div>
   );
 };
