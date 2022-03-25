@@ -15,7 +15,7 @@ export const BlogItem: VFC<Props> = ({ article }) => {
         {article.properties.Date.date?.start.replace(/-/g, '/') || '日付なし'}
       </div>
       {/* Title */}
-      <h3 className="mt-2 text-lg">{article.properties.Title.title[0].plain_text}</h3>
+      <h3 className="mt-2 text-lg">{article.properties.Title.title[0]?.plain_text}</h3>
       {/* Tags */}
       <div className="space-x-2">
         {article.properties.Tags.multi_select?.map((option: any) => (

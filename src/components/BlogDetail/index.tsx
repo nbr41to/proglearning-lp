@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const BlogDetailPage: VFC<Props> = ({ article }) => {
-  const title = article.page.properties.Title.title[0].plain_text;
+  const title = article.page.properties.Title.title[0]?.plain_text;
   const tags = article.page.properties.Tags.multi_select;
   const blocks = article.children.results;
 
@@ -29,7 +29,7 @@ export const BlogDetailPage: VFC<Props> = ({ article }) => {
         {blocks?.map((block: any) => {
           /* blockがparagraphだった場合 */
           if (block.type === 'paragraph') {
-            return <p key={block.id}>{block.paragraph.text[0].plain_text}</p>;
+            return <p key={block.id}>{block.paragraph.text[0]?.plain_text}</p>;
           }
           /* blockがimageだった場合 */
           if (block.type === 'image') {

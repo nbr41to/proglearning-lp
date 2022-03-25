@@ -34,7 +34,7 @@ type Props = {
 };
 
 const NewsDetail: NextPage<Props> = ({ article }) => {
-  const title = article.page.properties.Title.title[0].plain_text;
+  const title = article.page.properties.Title.title[0]?.plain_text;
 
   return (
     <>
