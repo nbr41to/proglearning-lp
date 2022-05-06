@@ -24,7 +24,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta property="og:image" content={ogImage} />
         <meta property="og:locale" content="ja_JP" />
         {/* Twitter */}
-        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={ogTitle} />
         <meta name="twitter:description" content={ogDescription} />
         <meta name="twitter:image" content={'https://proglab.nbr41.com' + ogImage} />
