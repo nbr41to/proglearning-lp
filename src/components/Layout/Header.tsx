@@ -10,14 +10,14 @@ export const Header = () => {
   return (
     <header className="fixed z-50 w-full bg-white/80 shadow backdrop-blur-sm">
       <div className="flex justify-center items-center py-2 px-2 mx-auto max-w-[1024px] sm:justify-between sm:px-6">
-        <div className="flex gap-2 items-center cursor-pointer sm:gap-4" onClick={() => router.push('/')}>
+        <div className="flex gap-1 items-center cursor-pointer sm:gap-2" onClick={() => router.push('/')}>
           <div className="block sm:hidden">
             <Image src={logo1} width={40} height={36} />
           </div>
           <div className="hidden sm:block">
             <Image src={logo1} width={54} height={50} />
           </div>
-          <div className="text-2xl font-bold text-slate-700 sm:text-3xl sm:font-normal">progLearning</div>
+          <div className="font-baloo text-2xl font-bold text-slate-700 sm:text-3xl sm:font-normal">progLearning</div>
         </div>
         <div className="hidden justify-end py-4 ml-auto sm:flex">
           <nav className="flex gap-7">
