@@ -20,7 +20,7 @@ export const Footer: VFC = () => {
             <Link href="/contact">
               <a className="hover:text-gray-700">お問い合わせ</a>
             </Link>
-            <Link href="/application">
+            <Link href="https://www.proglearning.org/entry">
               <a className="hover:text-gray-700">お申し込み</a>
             </Link>
           </div>

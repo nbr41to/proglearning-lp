@@ -99,11 +99,11 @@ export const AboutProgLabPage = () => {
       />
       <Members />
       <SectionColumn
-        title="今だけ初月無料 💨"
-        paragraph="こちらよりお申し込みいただくことで、初月無料で加入することができます。1ヶ月の体験入会としてでも構いませんので、一緒にプログラミングを勉強できることを楽しみにしております。"
+        title="お申し込み"
+        paragraph="こちらよりお申し込みいただくことで、加入することができます。一緒にプログラミングを勉強できることを楽しみにしております。※初月無料は終わりました"
       >
         <div className="flex flex-wrap gap-4 justify-center items-center px-6 mt-8">
-          <LinkButton href="/application" fill label="初月無料で申し込む" />
+          <LinkButton href="https://www.proglearning.org/entry" fill label="申し込む" />
           <LinkButton href="/contact" label="まずは無料相談 →" />
         </div>
       </SectionColumn>

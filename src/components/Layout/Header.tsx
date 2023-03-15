@@ -35,7 +35,7 @@ export const Header = () => {
             </Link>
           </nav>
           <div className="hidden relative pl-6 ml-6 border-l-2 md:block">
-            <Link href="/application">
+            <Link href="https://www.proglearning.org/entry">
               <a className="py-3 px-4 font-bold text-white bg-amber-400 rounded-md shadow">お申し込み</a>
             </Link>
             <div className="absolute -top-4 -right-2 w-4 h-4">
